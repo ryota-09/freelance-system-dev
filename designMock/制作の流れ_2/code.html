@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web and System Development Process</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1193d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans JP', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f3f4] dark:border-b-gray-700 px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-gray-800 dark:text-gray-200">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-gray-800 dark:text-gray-200 text-lg font-bold leading-tight tracking-[-0.015em]">Fukui Web/System Development</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-gray-800 dark:text-gray-300 text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-gray-800 dark:text-gray-300 text-sm font-medium leading-normal" href="#">Works</a>
+<a class="text-gray-800 dark:text-gray-300 text-sm font-medium leading-normal" href="#">Price</a>
+<a class="text-gray-800 dark:text-gray-300 text-sm font-medium leading-normal" href="#">Testimonials</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Contact</span>
+</button>
+</div>
+<div class="md:hidden">
+<button class="p-2 text-gray-800 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<div class="@container mt-5">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" data-alt="Abstract gradient background" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvh6-EddekzFPV7VFtmQe-FCt4P8QTAHnvHKyStSMvO9Gcd2gLYDF9vhwvCrVJZuMQk6N87-fERZhJqpjWexitGSd7--VSC1NUqI9H8fB4WFmCne_piykvruIa0v0xQE6bozW5ViU_Dkrj3043L-J830J1SjcCWZJS63FLVSySZLpF_EVGHtN8MvlVQO7KW7gc78OHuIlte7s23vac4JscVVMOXXpee7U3MUfJgi2LJu8N4JGMtqhnWL8tlsvMiVCLJVq5By-ARNI");'>
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            安心のプロジェクト進行プロセス
+                                        </h1>
+<h2 class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">
+                                            お客様が開発の全体像を理解し、不安なくご依頼いただけるよう、お問い合わせから運用までの流れを詳しくご説明します。
+                                        </h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">無料相談・お問い合わせはこちら</span>
+</button>
+</div>
+</div>
+</div>
+<div class="py-16 sm:py-24 px-4">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Web制作・システム開発の流れ</h2>
+<div class="grid grid-cols-[auto_1fr] gap-x-4 md:gap-x-8">
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">contact_support</span>
+</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="pb-16">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">01. お問い合わせ・無料相談</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">お客様の課題やご要望をヒアリングします。まずはお気軽にご相談ください。</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">request_quote</span>
+</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="pb-16">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">02. 要件定義・お見積もり</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">ヒアリング内容を元に、機能やスコープを定義し、お見積もりを提示します。</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">draw</span>
+</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="pb-16">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">03. ご契約・設計</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">デザイン（UI/UX）とシステム構成の設計を行います。</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="pb-16">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">04. 実装・開発</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">設計に基づき、コーディングと開発を実施します。</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">checklist</span>
+</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="pb-16">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">05. テスト・検収</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">お客様に動作確認を行っていただき、修正点を洗い出します。</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="pb-16">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">06. 公開 (納品)</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">サーバーへのアップロードなど、Webサイト/システムを公開します。</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary-300 rounded-full size-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">07. 運用・保守</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">公開後の更新作業やサーバー管理、改善提案を行います。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark py-16 sm:py-24 px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">よくあるご質問</h2>
+<div class="flex flex-col">
+<details class="flex flex-col border-t border-t-gray-200 dark:border-t-gray-700 py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">途中で仕様変更は可能ですか？</p>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal pb-2">はい、可能です。ただし、仕様変更は納期や費用に影響する場合がございますので、その都度ご相談させていただき、ご納得いただいた上で進行いたします。</p>
+</details>
+<details class="flex flex-col border-t border-t-gray-200 dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">お見積もりは無料ですか？</p>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal pb-2">はい、お見積もりは無料で承っております。まずはお客様のご要望をお聞かせください。最適なプランをご提案させていただきます。</p>
+</details>
+<details class="flex flex-col border-t border-b border-b-gray-200 dark:border-b-gray-700 border-t-gray-200 dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4 list-none">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">開発の知識がなくても大丈夫ですか？</p>
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal pb-2">もちろんです。専門的な知識がないお客様にも分かりやすくご説明し、二人三脚でプロジェクトを進めてまいりますので、ご安心ください。</p>
+</details>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20 text-center">
+<div class="flex flex-col gap-2">
+<h2 class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight max-w-3xl mx-auto">
+                                        まずは無料でご相談ください。あなたのビジネスの課題を一緒に解決します。
+                                    </h2>
+</div>
+<div class="flex flex-1 justify-center">
+<div class="flex justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#4CAF50] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#4CAF50]/90 transition-colors">
+<span class="truncate">無料相談・お問い合わせはこちら</span>
+</button>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-400 text-sm">
+                                    お電話でのお問い合わせ: 0776-XX-XXXX  | メール: contact@fukui-dev.com
+                                </p>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-700 mt-10">
+<div class="max-w-[960px] mx-auto py-8 px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center sm:flex-row sm:justify-between">
+<div class="flex items-center gap-2 mb-4 sm:mb-0">
+<div class="size-5 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path></svg>
+</div>
+<span class="text-gray-800 dark:text-gray-200 font-semibold">Fukui Web/System Development</span>
+</div>
+<div class="flex space-x-6 text-sm text-gray-500 dark:text-gray-400">
+<a class="hover:text-gray-900 dark:hover:text-white" href="#">サイトマップ</a>
+<a class="hover:text-gray-900 dark:hover:text-white" href="#">プライバシーポリシー</a>
+<a class="hover:text-gray-900 dark:hover:text-white" href="#">会社概要</a>
+</div>
+</div>
+<p class="text-center text-xs text-gray-400 dark:text-gray-500 mt-8">© 2024 Fukui Web/System Development. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
