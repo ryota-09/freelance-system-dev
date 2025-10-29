@@ -242,13 +242,14 @@
   - Commit: "📝 [US1] サービス内容MDXファイル作成"
 
 - [ ] T026 [P] [US1] Create HeroSection component
+  - Reference: `designs/ホーム_-_特化型デザイン_2/` (screen.png, code.html)
   - Create: `components/features/HeroSection.tsx`
   - Add: Headline with Fukui value proposition
   - Add: Subheading explaining target audience
   - Add: Primary CTA button "無料相談予約" → /contact
   - Add: Hero background image or gradient
   - Add: Responsive layout for mobile/desktop
-  - Verify: Component renders without errors
+  - Verify: Component renders without errors and matches design reference
   - Commit: "🎨 [US1] ヒーローセクションコンポーネント作成"
 
 - [ ] T027 [P] [US1] Create ServiceCard component
@@ -260,23 +261,25 @@
   - Commit: "🃏 [US1] サービスカードコンポーネント作成"
 
 - [ ] T028 [US1] Create homepage (app/(marketing)/page.tsx)
+  - Reference: `designs/ホーム_-_特化型デザイン_2/` (screen.png, code.html)
   - Create: `app/(marketing)/page.tsx` with `export const dynamic = 'force-static'`
   - Import: HeroSection component
   - Add: Services overview section with 3 ServiceCards
   - Load: Service data from MDX files using lib/mdx.ts (at build time)
   - Add: Trust indicators section (service area badges)
   - Add: Secondary CTA to contact form
-  - Verify: Homepage renders all sections and generates static HTML
+  - Verify: Homepage renders all sections, generates static HTML, and matches design reference
   - Commit: "🏠 [US1] ホームページ実装完了"
 
 - [ ] T029 [P] [US1] Create individual service pages with static generation
+  - Reference: `designs/サービス_-_業種特化型_2/` (screen.png, code.html)
   - Create: `app/(marketing)/services/[slug]/page.tsx` - Dynamic service page
   - Add: `export const dynamic = 'force-static'`
   - Implement: `generateStaticParams()` for web-seisaku, system-kaihatsu, maintenance
   - Display: MDX content from content/services/
   - Add: Service-specific CTAs
   - Add: Related case studies section (placeholder)
-  - Verify: All 3 service pages render and generate static HTML
+  - Verify: All 3 service pages render, generate static HTML, and match design reference
   - Commit: "📄 [US1] サービス個別ページ実装完了"
 
 - [ ] T030 [US1] Create pricing page with static generation
@@ -380,15 +383,17 @@
   - Commit: "🃏 [US2] ケーススタディカードコンポーネント作成"
 
 - [ ] T040 [US2] Create case studies listing page
+  - Reference: `designs/事例_-_業種特化型_2/` (screen.png, code.html)
   - Create: `app/(marketing)/case-studies/page.tsx`
   - Load: All case studies using getCaseStudies() from lib/mdx.ts
   - Display: Grid of CaseStudyCard components
   - Add: Industry filter buttons (client-side filtering)
   - Add: Sort by date (newest first)
-  - Verify: Listing page renders all case studies
+  - Verify: Listing page renders all case studies and matches design reference
   - Commit: "📋 [US2] ケーススタディ一覧ページ実装完了"
 
 - [ ] T041 [US2] Create case study detail page
+  - Reference: `designs/事例_-_業種特化型_2/` (screen.png, code.html)
   - Create: `app/(marketing)/case-studies/[slug]/page.tsx`
   - Use: generateStaticParams() for all case studies
   - Load: Case study using getCaseStudyBySlug() from lib/mdx.ts
@@ -396,7 +401,7 @@
   - Display: Measurable results section with KPI cards
   - Display: Project timeline visualization
   - Add: "同じような成果を得る - 無料相談予約" CTA
-  - Verify: Detail pages render for all case studies
+  - Verify: Detail pages render for all case studies and match design reference
   - Commit: "📄 [US2] ケーススタディ詳細ページ実装完了"
 
 - [ ] T042 [P] [US2] Add case study links to homepage
@@ -537,6 +542,7 @@
   - Commit: "📝 [US3] 相談予約フォームコンポーネント作成"
 
 - [ ] T055 [US3] Create contact page with both forms
+  - Reference: Design files in `designs/` directory for form layout and styling
   - Create: `app/(marketing)/contact/page.tsx`
   - Display: Tabs or sections for "お問い合わせ" and "無料相談予約"
   - Embed: ContactForm component
@@ -544,7 +550,7 @@
   - Add: Phone number with tel: link (mobile-clickable)
   - Add: Business hours display
   - Add: Success page redirect (optional)
-  - Verify: Contact page renders both forms
+  - Verify: Contact page renders both forms and matches design reference
   - Commit: "📞 [US3] お問い合わせページ実装完了"
 
 - [ ] T056 [P] [US3] Update Header with phone number
@@ -610,13 +616,14 @@
 ### Implementation for User Story 4
 
 - [ ] T062 [US4] Create process page content (MDX or static)
+  - Reference: `designs/制作の流れ_2/` (screen.png, code.html)
   - Create: `app/(marketing)/process/page.tsx` or `content/process.mdx`
   - Add: Project phases visualization (could use timeline component)
   - Add: Phase details (requirements definition → design → implementation → review → launch → maintenance)
   - Add: Typical duration ranges for each phase
   - Add: Client responsibilities per phase
   - Add: "プロジェクトについて相談する" CTA → /contact
-  - Verify: Process page renders
+  - Verify: Process page renders and matches design reference
   - Commit: "📊 [US4] プロジェクトフローページ実装完了"
 
 - [ ] T063 [P] [US4] Create TimelineVisualization component (optional)
@@ -683,13 +690,14 @@
   - Commit: "🎨 [US5] FAQアコーディオンコンポーネント作成"
 
 - [ ] T069 [US5] Create FAQ page
+  - Reference: `designs/よくある質問_2/` (screen.png, code.html)
   - Create: `app/(marketing)/faq/page.tsx`
   - Load: All FAQ entries from content/faq/ using getFAQEntries()
   - Group: By category with category headers
   - Display: Using FAQAccordion components
   - Add: "直接お問い合わせ" CTA → /contact
   - Add: Search functionality (client-side filter, optional)
-  - Verify: FAQ page renders all questions
+  - Verify: FAQ page renders all questions and matches design reference
   - Commit: "❓ [US5] FAQページ実装完了"
 
 - [ ] T070 [P] [US5] Add FAQ link to navigation and footer
@@ -755,22 +763,24 @@
   - Commit: "🃏 [US6] ブログカードコンポーネント作成"
 
 - [ ] T076 [US6] Create blog listing page
+  - Reference: Design files in `designs/` directory for blog layout
   - Create: `app/(marketing)/blog/page.tsx`
   - Load: All blog posts using getBlogPosts() from lib/mdx.ts
   - Display: Grid of BlogPostCard components
   - Add: Category filter buttons (client-side)
   - Add: Sort by date (newest first)
-  - Verify: Blog listing page renders
+  - Verify: Blog listing page renders and matches design reference
   - Commit: "📋 [US6] ブログ一覧ページ実装完了"
 
 - [ ] T077 [US6] Create blog post detail page
+  - Reference: Design files in `designs/` directory for blog post layout
   - Create: `app/(marketing)/blog/[slug]/page.tsx`
   - Use: generateStaticParams() for all blog posts
   - Load: Post using getBlogPostBySlug() from lib/mdx.ts
   - Display: Full MDX content
   - Add: Related posts section (same category)
   - Add: "専門家にサポートを依頼する" CTA → /contact
-  - Verify: Blog post pages render
+  - Verify: Blog post pages render and match design reference
   - Commit: "📄 [US6] ブログ記事詳細ページ実装完了"
 
 - [ ] T078 [P] [US6] Add blog link to navigation and footer
@@ -812,6 +822,7 @@
 ### Implementation for User Story 7
 
 - [ ] T081 [US7] Create about page content
+  - Reference: Design files in `designs/` directory for about page layout
   - Create: `app/(marketing)/about/page.tsx` or `content/about.mdx`
   - Add: Freelancer background (Tokyo experience, technical expertise)
   - Add: Service areas section - all 8 Fukui cities explicitly listed
@@ -819,7 +830,7 @@
   - Add: Key differentiators (specialization, close communication, on-site visits, end-to-end service)
   - Add: Photo (optional)
   - Add: CTA to contact page
-  - Verify: About page renders
+  - Verify: About page renders and matches design reference
   - Commit: "👤 [US7] 会社概要ページ実装完了"
 
 - [ ] T082 [P] [US7] Add about link to navigation and footer
