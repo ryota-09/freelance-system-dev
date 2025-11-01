@@ -1,0 +1,232 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e4]:
+        - link "福井フリーランス" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e7]:
+          - link "サービス" [ref=e8] [cursor=pointer]:
+            - /url: /services/
+          - link "料金" [ref=e9] [cursor=pointer]:
+            - /url: /pricing/
+          - link "事例" [ref=e10] [cursor=pointer]:
+            - /url: /case-studies/
+          - link "制作の流れ" [ref=e11] [cursor=pointer]:
+            - /url: /process/
+          - link "よくある質問" [ref=e12] [cursor=pointer]:
+            - /url: /faq/
+          - link "ブログ" [ref=e13] [cursor=pointer]:
+            - /url: /blog/
+        - generic [ref=e14]:
+          - link "0776-12-3456" [ref=e15] [cursor=pointer]:
+            - /url: tel:0776123456
+            - img [ref=e16]
+            - text: 0776-12-3456
+          - link "無料相談予約" [ref=e18] [cursor=pointer]:
+            - /url: /contact/
+    - main [ref=e19]:
+      - generic [ref=e24]:
+        - heading "福井のWeb制作・システム開発 成果に直結するホームページを。" [level=1] [ref=e25]:
+          - text: 福井のWeb制作・システム開発
+          - text: 成果に直結するホームページを。
+        - paragraph [ref=e26]: 地域密着の丁寧な対応、東京の最新技術を福井で。小規模事業者様のためのカスタムWeb制作と予約システム開発を提供します。
+        - generic [ref=e27]:
+          - link "無料相談予約" [ref=e28] [cursor=pointer]:
+            - /url: /contact/
+          - link "料金プランをみてみる" [ref=e29] [cursor=pointer]:
+            - /url: /services/web-seisaku/
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - img [ref=e32]
+            - generic [ref=e34]: 福井県全域対応
+          - generic [ref=e35]:
+            - img [ref=e36]
+            - generic [ref=e38]: 現地訪問可能
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: 補助金相談対応
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "提供サービス" [level=2] [ref=e47]
+          - paragraph [ref=e48]: 福井の事業者様のニーズに合わせた、3つの主要サービスをご提供します。
+        - generic [ref=e49]:
+          - article [ref=e51]:
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - img [ref=e55]
+                - generic [ref=e59]: 標準
+              - generic [ref=e60]: Web制作
+              - generic [ref=e61]: 福井の小規模事業者様向けのホームページ制作サービス。レスポンシブ対応で、PCとスマートフォンの両方で快適に閲覧できるWebサイトを制作します。
+            - generic [ref=e62]:
+              - list [ref=e63]:
+                - listitem [ref=e64]:
+                  - generic [ref=e65]: ✓
+                  - generic [ref=e66]: レスポンシブデザイン（スマホ・タブレット対応）
+                - listitem [ref=e67]:
+                  - generic [ref=e68]: ✓
+                  - generic [ref=e69]: SEO基本設定
+                - listitem [ref=e70]:
+                  - generic [ref=e71]: ✓
+                  - generic [ref=e72]: お問い合わせフォーム
+                - listitem [ref=e73]:
+                  - generic [ref=e74]: ✓
+                  - generic [ref=e75]: CMS導入（更新しやすいサイト）
+                - listitem [ref=e76]:
+                  - generic [ref=e77]: ✓
+                  - generic [ref=e78]: アクセス解析設定
+              - link "詳しく見る" [ref=e80] [cursor=pointer]:
+                - /url: /services/web-seisaku/
+          - article [ref=e82]:
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - img [ref=e86]
+                - generic [ref=e90]: プレミアム
+              - generic [ref=e91]: システム開発
+              - generic [ref=e92]: 業務効率化のための各種システム開発。予約システム、顧客管理システム、在庫管理システムなど、事業に合わせたカスタムシステムを開発します。
+            - generic [ref=e93]:
+              - list [ref=e94]:
+                - listitem [ref=e95]:
+                  - generic [ref=e96]: ✓
+                  - generic [ref=e97]: 業務分析・要件定義
+                - listitem [ref=e98]:
+                  - generic [ref=e99]: ✓
+                  - generic [ref=e100]: カスタム機能開発
+                - listitem [ref=e101]:
+                  - generic [ref=e102]: ✓
+                  - generic [ref=e103]: データベース設計
+                - listitem [ref=e104]:
+                  - generic [ref=e105]: ✓
+                  - generic [ref=e106]: API連携
+                - listitem [ref=e107]:
+                  - generic [ref=e108]: ✓
+                  - generic [ref=e109]: セキュリティ対策
+              - link "詳しく見る" [ref=e111] [cursor=pointer]:
+                - /url: /services/system-kaihatsu/
+          - article [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - img [ref=e117]
+                - generic [ref=e119]: 標準
+              - generic [ref=e120]: 保守運用
+              - generic [ref=e121]: Webサイト・システムの継続的な保守運用サービス。セキュリティ対策、バックアップ、不具合対応、コンテンツ更新など、安心して運用できるサポート体制を提供します。
+            - generic [ref=e122]:
+              - list [ref=e123]:
+                - listitem [ref=e124]:
+                  - generic [ref=e125]: ✓
+                  - generic [ref=e126]: セキュリティアップデート
+                - listitem [ref=e127]:
+                  - generic [ref=e128]: ✓
+                  - generic [ref=e129]: 定期バックアップ
+                - listitem [ref=e130]:
+                  - generic [ref=e131]: ✓
+                  - generic [ref=e132]: 不具合対応（緊急対応含む）
+                - listitem [ref=e133]:
+                  - generic [ref=e134]: ✓
+                  - generic [ref=e135]: コンテンツ更新代行
+                - listitem [ref=e136]:
+                  - generic [ref=e137]: ✓
+                  - generic [ref=e138]: アクセス解析レポート
+              - link "詳しく見る" [ref=e140] [cursor=pointer]:
+                - /url: /services/maintenance/
+        - link "すべてのサービスを見る" [ref=e142] [cursor=pointer]:
+          - /url: /services/
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - heading "選ばれる理由" [level=2] [ref=e146]
+          - paragraph [ref=e147]: 福井の事業者様に寄り添う、地域密着型のサービス
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - img [ref=e151]
+            - heading "地域密着の丁寧な対応" [level=3] [ref=e157]
+            - paragraph [ref=e158]: 福井県内であれば現地訪問も可能。対面での打ち合わせで、細かなニーズまでしっかりヒアリングします。
+          - generic [ref=e159]:
+            - img [ref=e161]
+            - heading "東京の最新技術を福井で" [level=3] [ref=e165]
+            - paragraph [ref=e166]: 大手企業での開発経験を活かし、最新のWeb技術とシステム開発手法を福井の事業者様にお届けします。
+          - generic [ref=e167]:
+            - img [ref=e169]
+            - heading "補助金活用のサポート" [level=3] [ref=e173]
+            - paragraph [ref=e174]: IT導入補助金など、各種補助金の申請サポートも実施。コストを抑えた導入をお手伝いします。
+      - generic [ref=e177]:
+        - heading "まずは無料相談から" [level=2] [ref=e178]
+        - paragraph [ref=e179]: お気軽にご相談ください。福井県内であれば現地訪問も可能です。
+        - generic [ref=e180]:
+          - link "無料相談予約" [ref=e181] [cursor=pointer]:
+            - /url: /contact/
+          - link "料金プランを確認" [ref=e182] [cursor=pointer]:
+            - /url: /pricing/
+      - generic [ref=e185]:
+        - generic [ref=e186]:
+          - img [ref=e187]
+          - generic [ref=e190]: 福井県全域対応
+        - generic [ref=e191]:
+          - img [ref=e192]
+          - generic [ref=e195]: 現地訪問可能
+        - generic [ref=e196]:
+          - img [ref=e197]
+          - generic [ref=e200]: 補助金相談対応
+        - generic [ref=e201]:
+          - img [ref=e202]
+          - generic [ref=e205]: 無料相談実施中
+    - contentinfo [ref=e206]:
+      - generic [ref=e207]:
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - heading "福井フリーランスWeb制作" [level=3] [ref=e210]
+            - paragraph [ref=e211]: 福井県全域対応のWeb制作・システム開発サービス。小規模事業者様の成長をITで支援します。
+            - generic [ref=e212]:
+              - img [ref=e213]
+              - link "info@example.com" [ref=e215] [cursor=pointer]:
+                - /url: mailto:info@example.com
+            - generic [ref=e216]:
+              - img [ref=e217]
+              - link "0776-12-3456" [ref=e219] [cursor=pointer]:
+                - /url: tel:0776123456
+          - generic [ref=e220]:
+            - generic [ref=e221]:
+              - heading "サービス" [level=3] [ref=e222]
+              - list [ref=e223]:
+                - listitem [ref=e224]:
+                  - link "Web制作" [ref=e225] [cursor=pointer]:
+                    - /url: /services/web-seisaku/
+                - listitem [ref=e226]:
+                  - link "システム開発" [ref=e227] [cursor=pointer]:
+                    - /url: /services/system-kaihatsu/
+                - listitem [ref=e228]:
+                  - link "保守運用" [ref=e229] [cursor=pointer]:
+                    - /url: /services/maintenance/
+            - generic [ref=e230]:
+              - heading "情報" [level=3] [ref=e231]
+              - list [ref=e232]:
+                - listitem [ref=e233]:
+                  - link "制作事例" [ref=e234] [cursor=pointer]:
+                    - /url: /case-studies/
+                - listitem [ref=e235]:
+                  - link "料金プラン" [ref=e236] [cursor=pointer]:
+                    - /url: /pricing/
+                - listitem [ref=e237]:
+                  - link "制作の流れ" [ref=e238] [cursor=pointer]:
+                    - /url: /process/
+                - listitem [ref=e239]:
+                  - link "よくある質問" [ref=e240] [cursor=pointer]:
+                    - /url: /faq/
+                - listitem [ref=e241]:
+                  - link "ブログ" [ref=e242] [cursor=pointer]:
+                    - /url: /blog/
+        - paragraph [ref=e244]: © 2025 福井フリーランスWeb制作. All rights reserved.
+  - generic [ref=e249] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e250]:
+      - img [ref=e251]
+    - generic [ref=e255]:
+      - button "Open issues overlay" [ref=e256]:
+        - generic [ref=e257]:
+          - generic [ref=e258]: "0"
+          - generic [ref=e259]: "1"
+        - generic [ref=e260]: Issue
+      - button "Collapse issues badge" [ref=e261]:
+        - img [ref=e262]
+  - alert [ref=e264]
+```

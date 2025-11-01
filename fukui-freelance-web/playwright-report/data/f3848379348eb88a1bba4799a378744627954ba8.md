@@ -1,0 +1,312 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e4]:
+        - link "福井フリーランス" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e7]:
+          - link "サービス" [ref=e8] [cursor=pointer]:
+            - /url: /services/
+          - link "料金" [ref=e9] [cursor=pointer]:
+            - /url: /pricing/
+          - link "事例" [ref=e10] [cursor=pointer]:
+            - /url: /case-studies/
+          - link "制作の流れ" [ref=e11] [cursor=pointer]:
+            - /url: /process/
+          - link "よくある質問" [ref=e12] [cursor=pointer]:
+            - /url: /faq/
+          - link "ブログ" [ref=e13] [cursor=pointer]:
+            - /url: /blog/
+        - generic [ref=e14]:
+          - link "0776-12-3456" [ref=e15] [cursor=pointer]:
+            - /url: tel:0776123456
+            - img [ref=e16]
+            - text: 0776-12-3456
+          - link "無料相談予約" [ref=e18] [cursor=pointer]:
+            - /url: /contact/
+    - main [ref=e19]:
+      - generic [ref=e22]:
+        - heading "料金プラン" [level=1] [ref=e23]
+        - paragraph [ref=e24]: 明確で分かりやすい価格設定。小規模事業者様でも安心してご利用いただけます。
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - heading "Web制作" [level=2] [ref=e28]
+          - generic [ref=e29]:
+            - article [ref=e31]:
+              - generic [ref=e32]:
+                - heading "スタンダードプラン" [level=3] [ref=e34]
+                - generic [ref=e35]: 30万円〜50万円
+                - generic [ref=e36]: 小規模事業者様向けの基本的なホームページ制作
+              - generic [ref=e37]:
+                - list [ref=e38]:
+                  - listitem [ref=e39]:
+                    - generic [ref=e40]: ✓
+                    - generic [ref=e41]: 5〜10ページ程度
+                  - listitem [ref=e42]:
+                    - generic [ref=e43]: ✓
+                    - generic [ref=e44]: レスポンシブデザイン（スマホ・タブレット対応）
+                  - listitem [ref=e45]:
+                    - generic [ref=e46]: ✓
+                    - generic [ref=e47]: 基本的なSEO対策
+                  - listitem [ref=e48]:
+                    - generic [ref=e49]: ✓
+                    - generic [ref=e50]: お問い合わせフォーム設置
+                  - listitem [ref=e51]:
+                    - generic [ref=e52]: ✓
+                    - generic [ref=e53]: CMS導入（WordPress等）
+                  - listitem [ref=e54]:
+                    - generic [ref=e55]: ✓
+                    - generic [ref=e56]: 1ヶ月の無料サポート
+                  - listitem [ref=e57]:
+                    - generic [ref=e58]: ✓
+                    - generic [ref=e59]: SSL対応（セキュア通信）
+                - link "無料相談を予約" [ref=e61] [cursor=pointer]:
+                  - /url: /contact/
+            - article [ref=e63]:
+              - generic [ref=e64]:
+                - generic [ref=e66]: おすすめ
+                - heading "プレミアムプラン" [level=3] [ref=e68]
+                - generic [ref=e69]: 50万円〜100万円
+                - generic [ref=e70]: 本格的なビジネスサイトやECサイトに最適
+              - generic [ref=e71]:
+                - list [ref=e72]:
+                  - listitem [ref=e73]:
+                    - generic [ref=e74]: ✓
+                    - generic [ref=e75]: 10〜20ページ程度
+                  - listitem [ref=e76]:
+                    - generic [ref=e77]: ✓
+                    - generic [ref=e78]: レスポンシブデザイン
+                  - listitem [ref=e79]:
+                    - generic [ref=e80]: ✓
+                    - generic [ref=e81]: 高度なSEO対策
+                  - listitem [ref=e82]:
+                    - generic [ref=e83]: ✓
+                    - generic [ref=e84]: ブログ機能
+                  - listitem [ref=e85]:
+                    - generic [ref=e86]: ✓
+                    - generic [ref=e87]: アクセス解析設定
+                  - listitem [ref=e88]:
+                    - generic [ref=e89]: ✓
+                    - generic [ref=e90]: 3ヶ月の無料サポート
+                  - listitem [ref=e91]:
+                    - generic [ref=e92]: ✓
+                    - generic [ref=e93]: オリジナルデザイン
+                  - listitem [ref=e94]:
+                    - generic [ref=e95]: ✓
+                    - generic [ref=e96]: 多言語対応（オプション）
+                - link "無料相談を予約" [ref=e98] [cursor=pointer]:
+                  - /url: /contact/
+        - generic [ref=e99]:
+          - heading "システム開発" [level=2] [ref=e100]
+          - generic [ref=e101]:
+            - article [ref=e103]:
+              - generic [ref=e104]:
+                - heading "小規模システム" [level=3] [ref=e106]
+                - generic [ref=e107]: 50万円〜100万円
+                - generic [ref=e108]: 基本的な業務システムの開発
+              - generic [ref=e109]:
+                - list [ref=e110]:
+                  - listitem [ref=e111]:
+                    - generic [ref=e112]: ✓
+                    - generic [ref=e113]: 基本的なCRUD機能
+                  - listitem [ref=e114]:
+                    - generic [ref=e115]: ✓
+                    - generic [ref=e116]: データベース設計・構築
+                  - listitem [ref=e117]:
+                    - generic [ref=e118]: ✓
+                    - generic [ref=e119]: レスポンシブWebアプリ
+                  - listitem [ref=e120]:
+                    - generic [ref=e121]: ✓
+                    - generic [ref=e122]: 1〜2ヶ月の開発期間
+                  - listitem [ref=e123]:
+                    - generic [ref=e124]: ✓
+                    - generic [ref=e125]: 3ヶ月の保守サポート
+                  - listitem [ref=e126]:
+                    - generic [ref=e127]: ✓
+                    - generic [ref=e128]: 操作マニュアル作成
+                - link "無料相談を予約" [ref=e130] [cursor=pointer]:
+                  - /url: /contact/
+            - article [ref=e132]:
+              - generic [ref=e133]:
+                - heading "中規模システム" [level=3] [ref=e135]
+                - generic [ref=e136]: 100万円〜300万円
+                - generic [ref=e137]: 複雑な業務ロジックや外部連携が必要なシステム
+              - generic [ref=e138]:
+                - list [ref=e139]:
+                  - listitem [ref=e140]:
+                    - generic [ref=e141]: ✓
+                    - generic [ref=e142]: 複雑な業務ロジック実装
+                  - listitem [ref=e143]:
+                    - generic [ref=e144]: ✓
+                    - generic [ref=e145]: 外部システム連携（API開発）
+                  - listitem [ref=e146]:
+                    - generic [ref=e147]: ✓
+                    - generic [ref=e148]: セキュリティ強化
+                  - listitem [ref=e149]:
+                    - generic [ref=e150]: ✓
+                    - generic [ref=e151]: 3〜6ヶ月の開発期間
+                  - listitem [ref=e152]:
+                    - generic [ref=e153]: ✓
+                    - generic [ref=e154]: 6ヶ月の保守サポート
+                  - listitem [ref=e155]:
+                    - generic [ref=e156]: ✓
+                    - generic [ref=e157]: 段階的リリース対応
+                  - listitem [ref=e158]:
+                    - generic [ref=e159]: ✓
+                    - generic [ref=e160]: データ移行支援
+                - link "無料相談を予約" [ref=e162] [cursor=pointer]:
+                  - /url: /contact/
+        - generic [ref=e163]:
+          - heading "保守運用" [level=2] [ref=e164]
+          - generic [ref=e165]:
+            - article [ref=e167]:
+              - generic [ref=e168]:
+                - heading "ライトプラン" [level=3] [ref=e170]
+                - generic [ref=e171]: 月額2万円〜
+                - generic [ref=e172]: 小規模サイト向けの基本メンテナンス
+              - generic [ref=e173]:
+                - list [ref=e174]:
+                  - listitem [ref=e175]:
+                    - generic [ref=e176]: ✓
+                    - generic [ref=e177]: CMSアップデート（月1回）
+                  - listitem [ref=e178]:
+                    - generic [ref=e179]: ✓
+                    - generic [ref=e180]: セキュリティチェック
+                  - listitem [ref=e181]:
+                    - generic [ref=e182]: ✓
+                    - generic [ref=e183]: 週1回の自動バックアップ
+                  - listitem [ref=e184]:
+                    - generic [ref=e185]: ✓
+                    - generic [ref=e186]: メールサポート（営業日48時間以内）
+                  - listitem [ref=e187]:
+                    - generic [ref=e188]: ✓
+                    - generic [ref=e189]: テキスト・画像更新（月2回まで）
+                  - listitem [ref=e190]:
+                    - generic [ref=e191]: ✓
+                    - generic [ref=e192]: 月次レポート
+                - link "無料相談を予約" [ref=e194] [cursor=pointer]:
+                  - /url: /contact/
+            - article [ref=e196]:
+              - generic [ref=e197]:
+                - generic [ref=e199]: おすすめ
+                - heading "スタンダードプラン" [level=3] [ref=e201]
+                - generic [ref=e202]: 月額5万円〜
+                - generic [ref=e203]: 中規模サイト向けの手厚いサポート
+              - generic [ref=e204]:
+                - list [ref=e205]:
+                  - listitem [ref=e206]:
+                    - generic [ref=e207]: ✓
+                    - generic [ref=e208]: 毎日の自動バックアップ
+                  - listitem [ref=e209]:
+                    - generic [ref=e210]: ✓
+                    - generic [ref=e211]: サーバー稼働監視
+                  - listitem [ref=e212]:
+                    - generic [ref=e213]: ✓
+                    - generic [ref=e214]: 電話サポート（営業時間内）
+                  - listitem [ref=e215]:
+                    - generic [ref=e216]: ✓
+                    - generic [ref=e217]: メールサポート（営業日24時間以内）
+                  - listitem [ref=e218]:
+                    - generic [ref=e219]: ✓
+                    - generic [ref=e220]: テキスト・画像更新（月8回まで）
+                  - listitem [ref=e221]:
+                    - generic [ref=e222]: ✓
+                    - generic [ref=e223]: 新規ページ追加（月1ページまで）
+                  - listitem [ref=e224]:
+                    - generic [ref=e225]: ✓
+                    - generic [ref=e226]: 詳細な月次レポート
+                  - listitem [ref=e227]:
+                    - generic [ref=e228]: ✓
+                    - generic [ref=e229]: SEO基本チェック
+                - link "無料相談を予約" [ref=e231] [cursor=pointer]:
+                  - /url: /contact/
+      - generic [ref=e234]:
+        - heading "料金についての補足" [level=2] [ref=e235]
+        - generic [ref=e236]:
+          - generic [ref=e237]:
+            - heading "補助金のご活用について" [level=3] [ref=e238]:
+              - img [ref=e239]
+              - text: 補助金のご活用について
+            - paragraph [ref=e242]: IT導入補助金やものづくり補助金など、各種補助金の活用が可能です。申請サポートも行っておりますので、お気軽にご相談ください。
+          - generic [ref=e243]:
+            - heading "お見積もりについて" [level=3] [ref=e244]:
+              - img [ref=e245]
+              - text: お見積もりについて
+            - paragraph [ref=e248]: 上記は目安の料金です。お客様の具体的なご要望に応じて、詳細なお見積もりを作成いたします。まずは無料相談でお話をお聞かせください。
+          - generic [ref=e249]:
+            - heading "お支払い方法" [level=3] [ref=e250]:
+              - img [ref=e251]
+              - text: お支払い方法
+            - paragraph [ref=e253]: 銀行振込に対応しております。分割払いについてもご相談に応じますので、お気軽にお問い合わせください。
+          - generic [ref=e254]:
+            - heading "キャンセルポリシー" [level=3] [ref=e255]:
+              - img [ref=e256]
+              - text: キャンセルポリシー
+            - paragraph [ref=e261]: プロジェクト開始前であれば、着手金を除き全額返金いたします。開始後のキャンセルについては、進捗状況に応じた精算となります。
+      - generic [ref=e264]:
+        - heading "ご予算やご要望に合わせたプランをご提案" [level=2] [ref=e265]
+        - paragraph [ref=e266]: まずは無料相談で、お客様のご状況をお聞かせください。最適なプランをご提案いたします。
+        - link "今すぐ無料で相談する" [ref=e268] [cursor=pointer]:
+          - /url: /contact/
+    - contentinfo [ref=e269]:
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - heading "福井フリーランスWeb制作" [level=3] [ref=e273]
+            - paragraph [ref=e274]: 福井県全域対応のWeb制作・システム開発サービス。小規模事業者様の成長をITで支援します。
+            - generic [ref=e275]:
+              - img [ref=e276]
+              - link "info@example.com" [ref=e278] [cursor=pointer]:
+                - /url: mailto:info@example.com
+            - generic [ref=e279]:
+              - img [ref=e280]
+              - link "0776-12-3456" [ref=e282] [cursor=pointer]:
+                - /url: tel:0776123456
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - heading "サービス" [level=3] [ref=e285]
+              - list [ref=e286]:
+                - listitem [ref=e287]:
+                  - link "Web制作" [ref=e288] [cursor=pointer]:
+                    - /url: /services/web-seisaku/
+                - listitem [ref=e289]:
+                  - link "システム開発" [ref=e290] [cursor=pointer]:
+                    - /url: /services/system-kaihatsu/
+                - listitem [ref=e291]:
+                  - link "保守運用" [ref=e292] [cursor=pointer]:
+                    - /url: /services/maintenance/
+            - generic [ref=e293]:
+              - heading "情報" [level=3] [ref=e294]
+              - list [ref=e295]:
+                - listitem [ref=e296]:
+                  - link "制作事例" [ref=e297] [cursor=pointer]:
+                    - /url: /case-studies/
+                - listitem [ref=e298]:
+                  - link "料金プラン" [ref=e299] [cursor=pointer]:
+                    - /url: /pricing/
+                - listitem [ref=e300]:
+                  - link "制作の流れ" [ref=e301] [cursor=pointer]:
+                    - /url: /process/
+                - listitem [ref=e302]:
+                  - link "よくある質問" [ref=e303] [cursor=pointer]:
+                    - /url: /faq/
+                - listitem [ref=e304]:
+                  - link "ブログ" [ref=e305] [cursor=pointer]:
+                    - /url: /blog/
+        - paragraph [ref=e307]: © 2025 福井フリーランスWeb制作. All rights reserved.
+  - generic [ref=e312] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e313]:
+      - img [ref=e314]
+    - generic [ref=e317]:
+      - button "Open issues overlay" [ref=e318]:
+        - generic [ref=e319]:
+          - generic [ref=e320]: "0"
+          - generic [ref=e321]: "1"
+        - generic [ref=e322]: Issue
+      - button "Collapse issues badge" [ref=e323]:
+        - img [ref=e324]
+  - alert [ref=e326]
+```
