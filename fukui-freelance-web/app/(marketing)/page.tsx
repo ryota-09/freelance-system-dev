@@ -2,6 +2,7 @@ import { Link } from 'next-view-transitions';
 import { Handshake, Lightbulb, BadgeDollarSign, CheckCircle } from 'lucide-react';
 import { HeroSection } from '@/components/features/HeroSection';
 import { ServiceCard } from '@/components/features/ServiceCard';
+import { CaseStudyCard } from '@/components/features/CaseStudyCard';
 import { Button } from '@/components/ui/button';
 import { getServices } from '@/lib/mdx';
 
@@ -12,6 +13,26 @@ import { getServices } from '@/lib/mdx';
  * Force static generation
  */
 export const dynamic = 'force-static';
+
+// Featured case studies data (will be replaced with MDX import)
+const featuredCaseStudies = [
+  {
+    title: '美容室予約システム導入で予約数40%増加',
+    clientType: '美容室',
+    industry: '美容・サロン',
+    slug: 'beauty-salon-reservation',
+    excerpt: '福井市内の美容室様に予約システムを導入し、24時間オンライン予約を実現。予約数40%増加、電話対応時間75%削減を達成しました。',
+    resultsPreview: '予約数40%増加',
+  },
+  {
+    title: 'カフェテイクアウト注文システムで売上30%向上',
+    clientType: 'カフェ',
+    industry: '飲食店',
+    slug: 'cafe-takeout-ordering',
+    excerpt: '福井県内のカフェ様に事前注文システムを導入。テイクアウト売上30%増加、待ち時間67%削減、注文ミスゼロを実現しました。',
+    resultsPreview: '売上30%増加',
+  },
+];
 
 export default async function HomePage() {
   const services = await getServices();
@@ -54,6 +75,45 @@ export default async function HomePage() {
             <Button asChild variant="outline" size="lg" className="border-2">
               <Link href="/services">
                 すべてのサービスを見る
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Case Studies Section */}
+      <section className="bg-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              導入事例
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              福井県内の企業様の課題解決と成果をご紹介します
+            </p>
+          </div>
+
+          {/* Case Studies Grid */}
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
+            {featuredCaseStudies.map((caseStudy) => (
+              <CaseStudyCard
+                key={caseStudy.slug}
+                title={caseStudy.title}
+                clientType={caseStudy.clientType}
+                industry={caseStudy.industry}
+                resultsPreview={caseStudy.resultsPreview}
+                slug={caseStudy.slug}
+                excerpt={caseStudy.excerpt}
+              />
+            ))}
+          </div>
+
+          {/* View All Case Studies CTA */}
+          <div className="mt-12 text-center">
+            <Button asChild variant="outline" size="lg" className="border-2">
+              <Link href="/case-studies">
+                すべての事例を見る
               </Link>
             </Button>
           </div>
