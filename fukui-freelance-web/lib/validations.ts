@@ -138,29 +138,3 @@ export const bookingFormSchema = v.object({
 });
 
 export type BookingFormData = v.InferOutput<typeof bookingFormSchema>;
-
-// Custom validation: location required if preferredFormat is "in-person"
-export const validateBookingForm = (data: unknown) => {
-  const result = v.safeParse(bookingFormSchema, data);
-
-  if (!result.success) {
-    return result;
-  }
-
-  // Additional validation: location required for in-person
-  if (result.output.preferredFormat === 'in-person') {
-    if (!result.output.location || result.output.location.trim() === '') {
-      return {
-        success: false,
-        issues: [
-          {
-            path: [{ key: 'location' }],
-            message: '対面形式の場合、場所を入力してください',
-          },
-        ],
-      } as v.SafeParseResult<typeof bookingFormSchema>;
-    }
-  }
-
-  return result;
-};

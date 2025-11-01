@@ -54,11 +54,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { frontmatter, content } = result;
 
   // Icon mapping
-  const IconComponent = {
+  const iconMap: Record<string, typeof Globe> = {
     globe: Globe,
     code: Code2,
     shield: Shield,
-  }[frontmatter.icon] || Package;
+  };
+  const IconComponent = frontmatter.icon ? iconMap[frontmatter.icon] || Package : Package;
 
   // Pricing tier labels
   const tierLabel = {

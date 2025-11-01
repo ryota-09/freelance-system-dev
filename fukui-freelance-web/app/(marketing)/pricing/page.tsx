@@ -160,9 +160,7 @@ export default function PricingPage() {
                           ? 'border-2 border-brand-500 shadow-xl ring-2 ring-brand-500 ring-offset-2'
                           : 'border-2 border-gray-200'
                       }`}
-                      asChild
                     >
-                      <article className="flex h-full flex-col">
                       <CardHeader>
                         {plan.recommended && (
                           <div className="mb-4">
@@ -171,8 +169,8 @@ export default function PricingPage() {
                             </span>
                           </div>
                         )}
-                        <CardTitle asChild className="text-2xl">
-                          <h3>{plan.name}</h3>
+                        <CardTitle className="text-2xl">
+                          {plan.name}
                         </CardTitle>
                         <div className="mt-4">
                           <span className="text-4xl font-bold text-gray-900">
@@ -209,7 +207,6 @@ export default function PricingPage() {
                           </Link>
                         </Button>
                       </CardFooter>
-                      </article>
                     </Card>
                   ))}
               </div>

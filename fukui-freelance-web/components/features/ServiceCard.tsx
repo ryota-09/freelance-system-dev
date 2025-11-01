@@ -7,7 +7,7 @@ interface ServiceCardProps {
   title: string;
   slug: string;
   description: string;
-  icon: string;
+  icon?: string;
   features?: string[];
   pricingTier?: string;
 }
@@ -26,11 +26,12 @@ export function ServiceCard({
   pricingTier,
 }: ServiceCardProps) {
   // Icon mapping for service types
-  const IconComponent = {
+  const iconMap: Record<string, typeof Globe> = {
     globe: Globe,
     code: Code2,
     shield: Shield,
-  }[icon] || Package;
+  };
+  const IconComponent = icon ? iconMap[icon] || Package : Package;
 
   // Pricing tier badges
   const tierLabel = {
@@ -40,8 +41,7 @@ export function ServiceCard({
   }[pricingTier || 'standard'];
 
   return (
-    <Card data-testid="service-card" className="flex h-full flex-col border-2 border-gray-200 transition-all hover:border-brand-500 hover:shadow-lg" asChild>
-      <article>
+    <Card data-testid="service-card" className="flex h-full flex-col border-2 border-gray-200 transition-all hover:border-brand-500 hover:shadow-lg">
       <CardHeader>
         <div className="mb-4 flex items-center justify-between">
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
@@ -79,7 +79,6 @@ export function ServiceCard({
           </Button>
         </div>
       </CardContent>
-      </article>
     </Card>
   );
 }
