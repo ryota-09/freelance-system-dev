@@ -1,16 +1,19 @@
+'use client';
+
+import * as React from 'react';
+import { ContactForm } from '@/components/forms/ContactForm';
+import { BookingForm } from '@/components/forms/BookingForm';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
 /**
  * Contact Page
- * User Story 1: Contact Form for Free Consultation
- * Force static generation
+ * User Story 3: Submitting Inquiry/Consultation Request
+ * Displays both contact form and booking form in tabs
  */
-export const dynamic = 'force-static';
-
-export const metadata = {
-  title: '無料相談予約 | 福井フリーランスWeb制作',
-  description: 'Web制作、システム開発のご相談を無料で承ります。福井県内であれば現地訪問も可能です。',
-};
-
 export default function ContactPage() {
+  const [activeTab, setActiveTab] = React.useState<'contact' | 'booking'>('contact');
+
   return (
     <>
       {/* Hero Section */}
@@ -18,7 +21,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              無料相談予約
+              お問い合わせ・無料相談予約
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-100">
               お気軽にご相談ください。福井県内であれば現地訪問も可能です。
@@ -27,31 +30,49 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Form Tabs Section */}
       <section className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">
-              お問い合わせフォーム
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              以下のフォームからお問い合わせください。担当者より2営業日以内にご連絡いたします。
-            </p>
+          {/* Tab Navigation */}
+          <div className="mb-8 flex gap-4 border-b border-gray-200">
+            <button
+              onClick={() => setActiveTab('contact')}
+              className={`pb-4 px-1 text-lg font-semibold border-b-2 transition-colors ${
+                activeTab === 'contact'
+                  ? 'border-amber-600 text-amber-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              お問い合わせ
+            </button>
+            <button
+              onClick={() => setActiveTab('booking')}
+              className={`pb-4 px-1 text-lg font-semibold border-b-2 transition-colors ${
+                activeTab === 'booking'
+                  ? 'border-amber-600 text-amber-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              無料相談予約
+            </button>
           </div>
 
-          {/* Placeholder for contact form */}
-          <div className="rounded-lg border-2 border-gray-200 bg-gray-50 p-12 text-center">
-            <p className="text-gray-600">
-              お問い合わせフォームは準備中です。
-            </p>
-            <p className="mt-4 text-sm text-gray-500">
-              お急ぎの方は、お電話でお問い合わせください。
-              <br />
-              <a href="tel:0776123456" className="font-semibold text-brand-600 hover:text-brand-700">
-                0776-12-3456
-              </a>
-            </p>
-          </div>
+          {/* Tab Content */}
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                {activeTab === 'contact' ? 'お問い合わせフォーム' : '無料相談予約フォーム'}
+              </CardTitle>
+              <CardDescription>
+                {activeTab === 'contact'
+                  ? '以下のフォームからお問い合わせください。1営業日以内にご連絡いたします。'
+                  : '無料相談をご希望の方は、以下のフォームからご予約ください。1営業日以内に日程調整のご連絡をいたします。'}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {activeTab === 'contact' ? <ContactForm /> : <BookingForm />}
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -60,7 +81,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100 text-amber-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -77,7 +98,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">お電話</h3>
               <p className="mt-2 text-gray-600">
-                <a href="tel:0776123456" className="hover:text-brand-600">
+                <a href="tel:0776123456" className="hover:text-amber-600">
                   0776-12-3456
                 </a>
               </p>
@@ -85,7 +106,7 @@ export default function ContactPage() {
             </div>
 
             <div className="text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100 text-amber-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -102,7 +123,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900">メール</h3>
               <p className="mt-2 text-gray-600">
-                <a href="mailto:info@example.com" className="hover:text-brand-600">
+                <a href="mailto:info@example.com" className="hover:text-amber-600">
                   info@example.com
                 </a>
               </p>
@@ -110,7 +131,7 @@ export default function ContactPage() {
             </div>
 
             <div className="text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100 text-amber-600">
                 <svg
                   className="h-6 w-6"
                   fill="none"
