@@ -3,6 +3,7 @@
  * Display the complete project flow from inquiry to maintenance
  */
 import Link from 'next/link';
+import { MessageCircle, ClipboardList, PenTool, Settings, CheckCircle, Rocket, Wrench, Phone, Clock, Lock } from 'lucide-react';
 
 export const dynamic = 'force-static';
 
@@ -18,7 +19,7 @@ const processSteps = [
     description: 'お客様の課題やご要望をヒアリングします。まずはお気軽にご相談ください。オンライン・対面どちらでも対応可能です。',
     duration: '1~2日',
     clientResponsibility: 'ご要望や課題をお聞かせください',
-    icon: '💬',
+    Icon: MessageCircle,
   },
   {
     number: '02',
@@ -26,7 +27,7 @@ const processSteps = [
     description: 'ヒアリング内容を元に、機能やスコープを定義し、お見積もりを提示します。開発に必要な要件を明確にし、プロジェクトの方向性を決定します。',
     duration: '3~7日',
     clientResponsibility: '要件定義書・お見積もり内容のご確認',
-    icon: '📋',
+    Icon: ClipboardList,
   },
   {
     number: '03',
@@ -34,7 +35,7 @@ const processSteps = [
     description: 'デザイン（UI/UX）とシステム構成の設計を行います。お客様のブランドイメージや使いやすさを考慮した設計を作成します。',
     duration: '1~2週間',
     clientResponsibility: '設計書・デザイン案のご確認',
-    icon: '✏️',
+    Icon: PenTool,
   },
   {
     number: '04',
@@ -42,7 +43,7 @@ const processSteps = [
     description: '設計に基づき、コーディングと開発を実施します。定期的に進捗をご報告し、お客様のフィードバックを反映しながら開発を進めます。',
     duration: '2~8週間',
     clientResponsibility: '進捗確認・必要素材のご提供',
-    icon: '⚙️',
+    Icon: Settings,
   },
   {
     number: '05',
@@ -50,7 +51,7 @@ const processSteps = [
     description: 'お客様に動作確認を行っていただき、修正点を洗い出します。実際の環境でのテストを実施し、品質を確保します。',
     duration: '1~2週間',
     clientResponsibility: '動作確認・修正依頼のご提出',
-    icon: '✓',
+    Icon: CheckCircle,
   },
   {
     number: '06',
@@ -58,7 +59,7 @@ const processSteps = [
     description: 'サーバーへのアップロードなど、Webサイト/システムを公開します。ドメイン設定やSSL証明書の設定も行います。',
     duration: '1~3日',
     clientResponsibility: '最終確認・公開承認',
-    icon: '🚀',
+    Icon: Rocket,
   },
   {
     number: '07',
@@ -66,7 +67,7 @@ const processSteps = [
     description: '公開後の更新作業やサーバー管理、改善提案を行います。継続的にサイトの健全性を保ち、必要に応じて機能追加や改善を実施します。',
     duration: '継続的',
     clientResponsibility: '更新内容のご指示・定期レビュー',
-    icon: '🔧',
+    Icon: Wrench,
   },
 ];
 
@@ -116,8 +117,8 @@ export default function ProcessPage() {
                 <div className="flex gap-6">
                   {/* Icon Circle */}
                   <div className="flex-shrink-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-2xl">
-                      {step.icon}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100">
+                      <step.Icon className="h-6 w-6 text-amber-700" />
                     </div>
                   </div>
 
@@ -155,7 +156,9 @@ export default function ProcessPage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             <div className="rounded-lg bg-white p-6 shadow-sm">
-              <div className="mb-4 text-3xl">📞</div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100">
+                <Phone className="h-6 w-6 text-amber-700" />
+              </div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900">密なコミュニケーション</h3>
               <p className="text-gray-600">
                 定期的な進捗報告とレビューを通じて、お客様のご要望を正確に反映します。
@@ -163,7 +166,9 @@ export default function ProcessPage() {
             </div>
 
             <div className="rounded-lg bg-white p-6 shadow-sm">
-              <div className="mb-4 text-3xl">⏰</div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100">
+                <Clock className="h-6 w-6 text-amber-700" />
+              </div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900">柔軟なスケジュール</h3>
               <p className="text-gray-600">
                 お客様のご都合に合わせて、スケジュールを調整いたします。急ぎの案件もご相談ください。
@@ -171,7 +176,9 @@ export default function ProcessPage() {
             </div>
 
             <div className="rounded-lg bg-white p-6 shadow-sm">
-              <div className="mb-4 text-3xl">🔒</div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100">
+                <Lock className="h-6 w-6 text-amber-700" />
+              </div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900">情報の守秘</h3>
               <p className="text-gray-600">
                 お客様の情報は厳重に管理し、機密保持契約にも対応いたします。
