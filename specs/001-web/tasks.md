@@ -604,10 +604,10 @@
 
 ### E2E Tests for User Story 4 (TDD Approach)
 
-- [ ] T061 [P] [US4] E2E test: Process page displays all project phases
+- [X] T061 [P] [US4] E2E test: Process page displays all project phases
   - Create: `tests/e2e/us4-process-page.spec.ts` using Playwright MCP
   - Test: Navigate to /process
-  - Test: See 6 project phases (requirements → design → implementation → review → launch → maintenance)
+  - Test: See 7 project phases (inquiry → requirements → design → implementation → testing → launch → maintenance)
   - Test: Each phase has description and duration
   - Test: CTA to "プロジェクトについて相談する" visible
   - Run: Using chrome-dev MCP - Expect: FAIL
@@ -615,37 +615,37 @@
 
 ### Implementation for User Story 4
 
-- [ ] T062 [US4] Create process page content (MDX or static)
+- [X] T062 [US4] Create process page content (MDX or static)
   - Reference: `designs/制作の流れ_2/` (screen.png, code.html)
   - Create: `app/(marketing)/process/page.tsx` or `content/process.mdx`
   - Add: Project phases visualization (could use timeline component)
-  - Add: Phase details (requirements definition → design → implementation → review → launch → maintenance)
+  - Add: Phase details (7 phases: inquiry → requirements → design → implementation → testing → launch → maintenance)
   - Add: Typical duration ranges for each phase
   - Add: Client responsibilities per phase
   - Add: "プロジェクトについて相談する" CTA → /contact
   - Verify: Process page renders and matches design reference
   - Commit: "📊 [US4] プロジェクトフローページ実装完了"
 
-- [ ] T063 [P] [US4] Create TimelineVisualization component (optional)
-  - Create: `components/features/TimelineVisualization.tsx`
-  - Display: Project phases in visual timeline format
-  - Add: Interactive hover states with phase details
+- [X] T063 [P] [US4] Create TimelineVisualization component (optional)
+  - Create: Timeline visualization embedded directly in process page
+  - Display: Project phases in visual timeline format with icon circles and connecting lines
+  - Add: Phase details with client responsibilities highlighted
   - Verify: Component renders timeline
-  - Commit: "📈 [US4] タイムライン可視化コンポーネント作成"
+  - Commit: "📈 [US4] タイムライン可視化コンポーネント作成" (embedded in page)
 
-- [ ] T064 [P] [US4] Add process link to navigation
-  - Update: `components/layout/Navigation.tsx`
-  - Add: "制作フロー" link → /process
+- [X] T064 [P] [US4] Add process link to navigation
+  - Update: `app/(marketing)/layout.tsx`
+  - Add: "制作の流れ" link → /process (already present in navigation)
   - Verify: Navigation includes process link
-  - Commit: "🔗 [US4] ナビゲーションへ制作フローリンク追加"
+  - Commit: "🔗 [US4] ナビゲーションへ制作フローリンク追加" (already complete)
 
 ### Test Execution & Bug Fixing for User Story 4
 
-- [ ] T065 [US4] Run E2E test using chrome-dev MCP
+- [X] T065 [US4] Run E2E test using chrome-dev MCP
   - Run: T061 test - Process page
-  - Record: Test results
+  - Record: Test results - 45/45 tests passed
   - If FAIL: Fix and re-run
-  - Commit: "✅ [US4] E2Eテスト実行・修正完了"
+  - Commit: "🐛 [US4] E2Eテスト修正完了 - 全45テスト成功"
 
 **Checkpoint**: User Story 4 complete - Process page functional
 
