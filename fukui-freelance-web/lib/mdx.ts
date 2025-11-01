@@ -152,13 +152,46 @@ export async function getBlogPostBySlug(slug: string) {
 }
 
 // FAQ types and functions
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export interface FAQCategory {
+  category: string;
+  faqs: FAQ[];
+}
+
 export interface FAQFrontmatter {
   question: string;
   category: string;
   order?: number;
 }
 
-export async function getFAQEntries(): Promise<Array<FAQFrontmatter & { answer: MDXRemoteSerializeResult; id: string }>> {
+// Load FAQ entries from JSON files
+export function getFAQEntries(): FAQCategory[] {
+  const faqDirectory = path.join(contentDirectory, 'faq');
+
+  if (!fs.existsSync(faqDirectory)) {
+    return [];
+  }
+
+  const files = fs.readdirSync(faqDirectory).filter(file => file.endsWith('.json'));
+  const faqCategories: FAQCategory[] = [];
+
+  for (const file of files) {
+    const filePath = path.join(faqDirectory, file);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const data = JSON.parse(fileContents) as FAQCategory;
+    faqCategories.push(data);
+  }
+
+  // Sort by category name
+  return faqCategories.sort((a, b) => a.category.localeCompare(b.category));
+}
+
+// For MDX-based FAQs (if needed in the future)
+export async function getFAQEntriesMDX(): Promise<Array<FAQFrontmatter & { answer: MDXRemoteSerializeResult; id: string }>> {
   const files = await getMDXFiles('faq');
   const faqs: Array<FAQFrontmatter & { answer: MDXRemoteSerializeResult; id: string }> = [];
 
