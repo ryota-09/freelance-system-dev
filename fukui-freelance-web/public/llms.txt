@@ -1,0 +1,88 @@
+# Fukui Freelance Web Development Site
+
+## Project Overview
+This is a marketing website for a freelance web development and system development service based in Fukui Prefecture, Japan.
+
+## Tech Stack
+- **Framework**: Next.js 16 (App Router, Static Site Generation)
+- **Language**: TypeScript 5.x (strict mode)
+- **Styling**: TailwindCSS 4 + shadcn/ui
+- **Validation**: Valibot
+- **Forms**: React Hook Form
+- **Email**: Resend + React Email
+- **Content**: MDX (next-mdx-remote)
+- **Testing**: Playwright (E2E)
+- **Deployment**: Static export (output: 'export')
+
+## Architecture
+- **Rendering**: Static Generation (SSG) for all pages
+- **Routing**: App Router with route groups
+- **Components**: Server Components by default, Client Components for interactivity
+- **Content Management**: File-based with MDX
+- **Accessibility**: WCAG AA compliance with jsx-a11y ESLint rules
+
+## Key Pages
+- Homepage: `/` - Hero, services overview, featured case studies
+- Services: `/services/[slug]/` - Web development, System development, Maintenance
+- Case Studies: `/case-studies/` and `/case-studies/[slug]/`
+- Pricing: `/pricing/` - Service packages and price ranges
+- Process: `/process/` - Project workflow and phases
+- FAQ: `/faq/` - Common questions and answers
+- Blog: `/blog/` and `/blog/[slug]/` - Technical articles and insights
+- About: `/about/` - Company background and service areas
+- Contact: `/contact/` - Inquiry and consultation booking forms
+
+## Target Audience
+Small to medium-sized businesses in Fukui Prefecture (8 cities):
+- Fukui City (福井市)
+- Sabae City (鯖江市)
+- Echizen City (越前市)
+- Awara City (あわら市)
+- Ono City (大野市)
+- Katsuyama City (勝山市)
+- Sakai City (坂井市)
+- Tsuruga City (敦賀市)
+
+## Services Offered
+1. **Web Development (Web制作)**: Corporate sites, landing pages, responsive design
+2. **System Development (システム開発)**: Business applications, reservation systems, customer management
+3. **Maintenance (保守運用)**: Ongoing support, updates, technical consultation
+
+## Contact Information
+- Website: https://yourdomain.com
+- Email: contact@yourdomain.com
+- Phone: 0776-12-3456
+- Service Area: All of Fukui Prefecture (on-site visits available)
+
+## Special Features
+- Specialization in small business needs
+- Close communication and local presence
+- End-to-end service from planning to maintenance
+- Subsidy consultation support
+- Experience from Tokyo tech companies
+
+## Development Approach
+- Test-Driven Development (TDD) with Playwright
+- Japanese commit messages
+- User story-based implementation (US1-US7)
+- Accessibility-first design
+- Mobile-first responsive layouts
+
+## Content Types
+- Service offerings (services/)
+- Case studies (case-studies/)
+- Blog posts (blog/)
+- FAQ entries (faq/)
+
+## AI Assistant Guidelines
+When working with this codebase:
+1. Follow Next.js 16 App Router best practices
+2. Use Server Components by default, Client Components only when needed
+3. Validate all forms with Valibot
+4. Ensure WCAG AA accessibility compliance
+5. Use Japanese for user-facing content and commit messages
+6. Reference design files in `designs/` directory for implementation
+7. Write E2E tests before implementation (TDD)
+8. Use static generation (`export const dynamic = 'force-static'`) for all pages
+9. Follow the task list in `specs/001-web/tasks.md`
+10. Use shadcn/ui components for consistent styling
