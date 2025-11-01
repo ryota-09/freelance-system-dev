@@ -8,25 +8,32 @@ import { test, expect } from '@playwright/test';
 test.describe('US3: Consultation Booking Form', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/contact');
+    // Switch to booking tab
+    const bookingTab = page.getByRole('button', { name: /無料相談予約/i });
+    await bookingTab.click();
+    await page.waitForTimeout(300);
   });
 
   test('should display booking section on contact page', async ({ page }) => {
-    // Look for booking section or tab
-    const bookingSection = page.getByText(/無料相談予約|相談予約|Consultation Booking/i);
-    await expect(bookingSection).toBeVisible();
+    // Booking form should be visible after clicking tab
+    const bookingForm = page.getByText(/無料相談予約フォーム|予約フォーム/i);
+    await expect(bookingForm).toBeVisible();
   });
 
   test('should display consultation format selection (online/in-person)', async ({ page }) => {
-    // Look for format selection radio buttons or select
-    const formatSelection = page.locator('[name="preferredFormat"]');
-    await expect(formatSelection.first()).toBeVisible();
+    // Look for format selection select button
+    const formatSelection = page.locator('button#preferredFormat');
+    await expect(formatSelection).toBeVisible();
+
+    // Click to open dropdown
+    await formatSelection.click();
 
     // Check for online option
-    const onlineOption = page.getByText(/オンライン|Online/i).first();
+    const onlineOption = page.getByRole('option', { name: /オンライン|Online/i });
     await expect(onlineOption).toBeVisible();
 
     // Check for in-person option
-    const inPersonOption = page.getByText(/対面|In-person|訪問/i).first();
+    const inPersonOption = page.getByRole('option', { name: /対面|In-person/i });
     await expect(inPersonOption).toBeVisible();
   });
 
