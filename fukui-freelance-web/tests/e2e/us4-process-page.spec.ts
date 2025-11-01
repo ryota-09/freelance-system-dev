@@ -12,23 +12,26 @@ test.describe('US4: Process Page - Project Flow', () => {
   });
 
   test('should display the process page with title and description', async ({ page }) => {
-    // Check page title
-    await expect(page.locator('h1')).toContainText('制作の流れ');
+    // Check page title - main hero title
+    await expect(page.locator('h1')).toContainText('プロジェクト進行');
 
-    // Check that there's a description
-    const description = page.locator('text=お問い合わせから納品までの流れ');
-    await expect(description).toBeVisible();
+    // Check that there's a description - this is part of the hero section
+    await expect(page.locator('text=お問い合わせから運用までの流れ')).toBeVisible();
+
+    // Check that main content section exists
+    await expect(page.locator('h2').first()).toBeVisible();
   });
 
-  test('should display all 6 project phases', async ({ page }) => {
+  test('should display all 7 project phases', async ({ page }) => {
     // Define the expected phases
     const expectedPhases = [
-      { name: '要件定義', keyword: '要件' },
-      { name: 'デザイン', keyword: 'デザイン' },
+      { name: 'お問い合わせ・無料相談', keyword: 'お問い合わせ' },
+      { name: '要件定義・お見積もり', keyword: '要件定義' },
+      { name: 'ご契約・設計', keyword: '設計' },
       { name: '実装・開発', keyword: '実装' },
-      { name: 'レビュー・修正', keyword: 'レビュー' },
-      { name: '公開・納品', keyword: '公開' },
-      { name: '保守・運用', keyword: '保守' }
+      { name: 'テスト・検収', keyword: 'テスト' },
+      { name: '公開（納品）', keyword: '公開' },
+      { name: '運用・保守', keyword: '保守' }
     ];
 
     // Check that each phase is visible
@@ -60,8 +63,8 @@ test.describe('US4: Process Page - Project Flow', () => {
     const paragraphs = page.locator('p').filter({ hasText: /\S{20,}/ });
     const count = await paragraphs.count();
 
-    // Should have at least 6 paragraphs (one for each phase)
-    expect(count).toBeGreaterThanOrEqual(6);
+    // Should have at least 7 paragraphs (one for each phase)
+    expect(count).toBeGreaterThanOrEqual(7);
   });
 
   test('should display CTA to contact', async ({ page }) => {
