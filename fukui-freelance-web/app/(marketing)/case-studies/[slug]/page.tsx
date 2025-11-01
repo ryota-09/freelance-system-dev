@@ -221,6 +221,37 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
         </ul>
       </section>
 
+      {/* Before/After Section */}
+      <section className="mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Before */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">導入前の課題</h2>
+            <Card className="bg-red-50">
+              <CardContent className="p-6">
+                <p className="text-muted-foreground">
+                  電話予約のみの対応で、営業時間外の予約機会を逃していました。
+                  スタッフの負担も大きく、業務効率化が課題でした。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* After */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">導入後の改善</h2>
+            <Card className="bg-green-50">
+              <CardContent className="p-6">
+                <p className="text-muted-foreground">
+                  24時間オンライン予約を実現し、予約数が大幅に増加。
+                  スタッフの業務効率も向上し、顧客満足度が高まりました。
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Measurable Results - KPI Cards */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">成果・実績</h2>
