@@ -447,7 +447,7 @@
 
 ### E2E Tests for User Story 3 (TDD Approach)
 
-- [ ] T046 [P] [US3] E2E test: Contact form submission flow
+- [X] T046 [P] [US3] E2E test: Contact form submission flow
   - Create: `tests/e2e/us3-contact-form.spec.ts` using Playwright MCP
   - Test: Navigate to /contact
   - Test: Fill all required fields
@@ -457,7 +457,7 @@
   - Run: Using chrome-dev MCP - Expect: FAIL
   - Commit: "🧪 [US3] お問い合わせフォームE2Eテスト作成"
 
-- [ ] T047 [P] [US3] E2E test: Consultation booking flow
+- [X] T047 [P] [US3] E2E test: Consultation booking flow
   - Create: `tests/e2e/us3-booking-form.spec.ts` using Playwright MCP
   - Test: Navigate to /contact (booking section)
   - Test: Select consultation format (online/in-person)
@@ -468,7 +468,7 @@
   - Run: Using chrome-dev MCP - Expect: FAIL
   - Commit: "🧪 [US3] 相談予約E2Eテスト作成"
 
-- [ ] T048 [P] [US3] E2E test: Phone number clickable on mobile
+- [X] T048 [P] [US3] E2E test: Phone number clickable on mobile
   - Create: `tests/e2e/us3-phone-click.spec.ts` using Playwright MCP
   - Test: Set mobile viewport (375x667)
   - Test: Find phone number in header
@@ -477,7 +477,7 @@
   - Run: Using chrome-dev MCP - Expect: FAIL
   - Commit: "🧪 [US3] 電話番号クリックE2Eテスト作成"
 
-- [ ] T049 [P] [US3] E2E test: Form validation displays errors
+- [X] T049 [P] [US3] E2E test: Form validation displays errors
   - Create: `tests/e2e/us3-form-validation.spec.ts` using Playwright MCP
   - Test: Submit empty form
   - Test: See field-level error messages
@@ -488,7 +488,7 @@
 
 ### Implementation for User Story 3
 
-- [ ] T050 [P] [US3] Create React Email templates for inquiries
+- [X] T050 [P] [US3] Create React Email templates for inquiries
   - Create: `emails/ContactFormConfirmation.tsx` - Client auto-reply
   - Create: `emails/ContactFormNotification.tsx` - Freelancer notification
   - Create: `emails/BookingConfirmation.tsx` - Booking confirmation
@@ -496,7 +496,7 @@
   - Verify: Email templates render in React Email preview
   - Commit: "✉️ [US3] お問い合わせメールテンプレート作成"
 
-- [ ] T051 [US3] Create contact form API route with Resend integration
+- [X] T051 [US3] Create contact form API route with Resend integration
   - Create: `app/api/contact/route.ts` - POST endpoint
   - Implement: Valibot validation using contactFormSchema with `v.safeParse()`
   - Implement: Send confirmation email via Resend
@@ -507,7 +507,7 @@
   - Verify: API route compiles without errors
   - Commit: "🔌 [US3] お問い合わせAPI実装完了"
 
-- [ ] T052 [US3] Create booking API route with Resend integration
+- [X] T052 [US3] Create booking API route with Resend integration
   - Create: `app/api/booking/route.ts` - POST endpoint
   - Implement: Valibot validation using bookingFormSchema with `v.safeParse()`
   - Implement: Send booking confirmation email
@@ -516,7 +516,7 @@
   - Verify: API route compiles without errors
   - Commit: "🔌 [US3] 相談予約API実装完了"
 
-- [ ] T053 [P] [US3] Create ContactForm component with shadcn/ui
+- [X] T053 [P] [US3] Create ContactForm component with shadcn/ui
   - Create: `components/forms/ContactForm.tsx`
   - Use: react-hook-form + Valibot resolver (`@hookform/resolvers/valibot`)
   - Use: shadcn/ui components (Input, Label, Button, Card)
@@ -528,7 +528,7 @@
   - Verify: Form renders and validates
   - Commit: "📝 [US3] お問い合わせフォームコンポーネント作成"
 
-- [ ] T054 [P] [US3] Create BookingForm component with shadcn/ui
+- [X] T054 [P] [US3] Create BookingForm component with shadcn/ui
   - Create: `components/forms/BookingForm.tsx`
   - Use: react-hook-form + Valibot resolver
   - Use: shadcn/ui components (Input, Label, Button, Select, Calendar for date picker)
@@ -541,7 +541,7 @@
   - Verify: Form renders and validates
   - Commit: "📝 [US3] 相談予約フォームコンポーネント作成"
 
-- [ ] T055 [US3] Create contact page with both forms
+- [X] T055 [US3] Create contact page with both forms
   - Reference: Design files in `designs/` directory for form layout and styling
   - Create: `app/(marketing)/contact/page.tsx`
   - Display: Tabs or sections for "お問い合わせ" and "無料相談予約"
@@ -553,7 +553,7 @@
   - Verify: Contact page renders both forms and matches design reference
   - Commit: "📞 [US3] お問い合わせページ実装完了"
 
-- [ ] T056 [P] [US3] Update Header with phone number
+- [X] T056 [P] [US3] Update Header with phone number
   - Update: `components/layout/Header.tsx`
   - Add: Clickable phone number with tel: link
   - Add: Business hours tooltip
@@ -561,7 +561,7 @@
   - Verify: Phone number clickable on mobile
   - Commit: "📱 [US3] ヘッダーへ電話番号追加"
 
-- [ ] T057 [US3] Wire up all CTAs to contact page
+- [X] T057 [US3] Wire up all CTAs to contact page
   - Update: Hero CTA → /contact
   - Update: Service page CTAs → /contact
   - Update: Case study CTAs → /contact
