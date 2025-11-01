@@ -23,9 +23,9 @@ test.describe('US3: Contact Form Submission', () => {
     await expect(page.locator('input[name="phone"]')).toBeVisible();
     await expect(page.locator('input[name="location"]')).toBeVisible();
 
-    // Check for select/radio fields
-    await expect(page.locator('[name="inquiryType"]')).toBeVisible();
-    await expect(page.locator('[name="budgetRange"]')).toBeVisible();
+    // Check for select/radio fields (using button role for SelectTrigger)
+    await expect(page.locator('button#inquiryType')).toBeVisible();
+    await expect(page.locator('button#budgetRange')).toBeVisible();
 
     // Check for submit button
     const submitButton = page.getByRole('button', { name: /送信|お問い合わせを送信|Submit/i });
@@ -44,18 +44,19 @@ test.describe('US3: Contact Form Submission', () => {
     await page.fill('input[name="desiredTimeline"]', '3ヶ月以内');
 
     // Select inquiry type (web制作)
-    const inquiryTypeSelect = page.locator('[name="inquiryType"]');
-    await inquiryTypeSelect.click();
+    await page.locator('button#inquiryType').click();
     await page.getByRole('option', { name: /Web制作|web/i }).first().click();
 
     // Select budget range
-    const budgetSelect = page.locator('[name="budgetRange"]');
-    await budgetSelect.click();
-    await page.getByRole('option', { name: /300k-500k|30万円-50万円/i }).first().click();
+    await page.locator('button#budgetRange').click();
+    await page.getByRole('option', { name: /30万円〜50万円|300k-500k/i }).first().click();
 
-    // Select at least one project goal
-    const goalCheckbox = page.locator('[name="projectGoals"][value="lead-generation"]').first();
-    await goalCheckbox.check();
+    // Select at least one project goal (using label click instead of checkbox directly)
+    await page.getByRole('checkbox', { name: /集客・リード獲得|lead.generation/i }).first().click();
+
+    // Select preferred contact method
+    await page.locator('button#preferredContactMethod').click();
+    await page.getByRole('option', { name: /メール|email/i }).first().click();
 
     // Optional: Add message
     const messageField = page.locator('textarea[name="message"]');
@@ -77,15 +78,19 @@ test.describe('US3: Contact Form Submission', () => {
   });
 
   test('should validate email format', async ({ page }) => {
-    // Fill invalid email
+    // Fill invalid email only
     await page.fill('input[name="email"]', 'invalid-email');
 
-    // Trigger validation by submitting or moving to next field
-    await page.locator('input[name="phone"]').click();
+    // Submit to trigger validation (this will show all validation errors)
+    const submitButton = page.getByRole('button', { name: /送信|お問い合わせを送信|Submit/i });
+    await submitButton.click();
 
-    // Check for error message
-    const errorMessage = page.getByText(/有効なメールアドレス|正しいメールアドレス|invalid email/i);
-    await expect(errorMessage).toBeVisible();
+    // Wait a bit for validation
+    await page.waitForTimeout(500);
+
+    // Check for email validation error specifically
+    const errorMessage = page.locator('p[role="alert"]', { hasText: /有効なメールアドレス|正しいメールアドレス/i });
+    await expect(errorMessage).toBeVisible({ timeout: 3000 });
   });
 
   test('should show required field errors when submitting empty form', async ({ page }) => {

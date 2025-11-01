@@ -35,6 +35,7 @@ export function ContactForm() {
     setValue,
     watch,
     reset,
+    trigger,
   } = useForm<ContactFormData>({
     resolver: valibotResolver(contactFormSchema),
     defaultValues: {
@@ -162,8 +163,14 @@ export function ContactForm() {
         <Label htmlFor="inquiryType">
           お問い合わせ種別 <span className="text-red-500">*</span>
         </Label>
-        <Select onValueChange={(value) => setValue('inquiryType', value as any)}>
-          <SelectTrigger id="inquiryType">
+        <Select
+          onValueChange={(value) => {
+            setValue('inquiryType', value as any);
+            trigger('inquiryType');
+          }}
+          name="inquiryType"
+        >
+          <SelectTrigger id="inquiryType" name="inquiryType">
             <SelectValue placeholder="選択してください" />
           </SelectTrigger>
           <SelectContent>
@@ -221,8 +228,14 @@ export function ContactForm() {
         <Label htmlFor="budgetRange">
           ご予算 <span className="text-red-500">*</span>
         </Label>
-        <Select onValueChange={(value) => setValue('budgetRange', value as any)}>
-          <SelectTrigger id="budgetRange">
+        <Select
+          onValueChange={(value) => {
+            setValue('budgetRange', value as any);
+            trigger('budgetRange');
+          }}
+          name="budgetRange"
+        >
+          <SelectTrigger id="budgetRange" name="budgetRange">
             <SelectValue placeholder="選択してください" />
           </SelectTrigger>
           <SelectContent>
@@ -259,8 +272,14 @@ export function ContactForm() {
         <Label htmlFor="preferredContactMethod">
           希望連絡方法 <span className="text-red-500">*</span>
         </Label>
-        <Select onValueChange={(value) => setValue('preferredContactMethod', value as any)}>
-          <SelectTrigger id="preferredContactMethod">
+        <Select
+          onValueChange={(value) => {
+            setValue('preferredContactMethod', value as any);
+            trigger('preferredContactMethod');
+          }}
+          name="preferredContactMethod"
+        >
+          <SelectTrigger id="preferredContactMethod" name="preferredContactMethod">
             <SelectValue placeholder="選択してください" />
           </SelectTrigger>
           <SelectContent>

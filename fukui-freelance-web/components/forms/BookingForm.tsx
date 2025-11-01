@@ -39,6 +39,7 @@ export function BookingForm() {
     setValue,
     watch,
     reset,
+    trigger,
   } = useForm<BookingFormData>({
     resolver: valibotResolver(bookingFormSchema),
     defaultValues: {
@@ -181,10 +182,14 @@ export function BookingForm() {
           相談形式 <span className="text-red-500">*</span>
         </Label>
         <Select
-          onValueChange={(value) => setValue('preferredFormat', value as 'online' | 'in-person')}
+          onValueChange={(value) => {
+            setValue('preferredFormat', value as 'online' | 'in-person');
+            trigger('preferredFormat');
+          }}
           defaultValue="online"
+          name="preferredFormat"
         >
-          <SelectTrigger id="preferredFormat">
+          <SelectTrigger id="preferredFormat" name="preferredFormat">
             <SelectValue placeholder="選択してください" />
           </SelectTrigger>
           <SelectContent>

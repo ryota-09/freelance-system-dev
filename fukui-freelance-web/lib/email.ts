@@ -20,6 +20,19 @@ export interface SendEmailOptions {
  * Send email using Resend API
  */
 export async function sendEmail(options: SendEmailOptions) {
+  // In development/test with invalid API key, log instead of sending
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const hasValidApiKey = process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 'your_resend_api_key_here';
+
+  if (isDevelopment && !hasValidApiKey) {
+    console.log('[DEV MODE] Email would be sent:', {
+      from: FROM_EMAIL,
+      to: options.to,
+      subject: options.subject,
+    });
+    return { success: true, data: { id: 'dev-mock-id' } };
+  }
+
   try {
     const { data, error } = await resend.emails.send({
       from: FROM_EMAIL,
