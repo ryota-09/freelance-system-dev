@@ -659,7 +659,7 @@
 
 ### E2E Tests for User Story 5 (TDD Approach)
 
-- [ ] T066 [P] [US5] E2E test: FAQ page displays 10+ questions
+- [X] T066 [P] [US5] E2E test: FAQ page displays 10+ questions
   - Create: `tests/e2e/us5-faq-page.spec.ts` using Playwright MCP
   - Test: Navigate to /faq
   - Test: See at least 10 FAQ entries
@@ -671,7 +671,7 @@
 
 ### Implementation for User Story 5
 
-- [ ] T067 [P] [US5] Create FAQ content files
+- [X] T067 [P] [US5] Create FAQ content files
   - Create: `content/faq/pricing.json` - 価格・費用 (3-4 questions)
   - Create: `content/faq/timeline.json` - 制作期間 (2-3 questions)
   - Create: `content/faq/content.json` - コンテンツ・素材 (2-3 questions)
@@ -681,7 +681,7 @@
   - Verify: Total 10-15 FAQ entries
   - Commit: "📝 [US5] FAQコンテンツファイル作成"
 
-- [ ] T068 [P] [US5] Create FAQAccordion component
+- [X] T068 [P] [US5] Create FAQAccordion component
   - Create: `components/features/FAQAccordion.tsx`
   - Props: question, answer, isOpen, onToggle
   - Add: Accordion expand/collapse animation
@@ -689,7 +689,7 @@
   - Verify: Component renders and toggles
   - Commit: "🎨 [US5] FAQアコーディオンコンポーネント作成"
 
-- [ ] T069 [US5] Create FAQ page
+- [X] T069 [US5] Create FAQ page
   - Reference: `designs/よくある質問_2/` (screen.png, code.html)
   - Create: `app/(marketing)/faq/page.tsx`
   - Load: All FAQ entries from content/faq/ using getFAQEntries()
@@ -700,16 +700,16 @@
   - Verify: FAQ page renders all questions and matches design reference
   - Commit: "❓ [US5] FAQページ実装完了"
 
-- [ ] T070 [P] [US5] Add FAQ link to navigation and footer
+- [X] T070 [P] [US5] Add FAQ link to navigation and footer
   - Update: Navigation and Footer - Add "よくある質問" link → /faq
   - Verify: FAQ accessible from all pages
   - Commit: "🔗 [US5] ナビゲーションへFAQリンク追加"
 
 ### Test Execution & Bug Fixing for User Story 5
 
-- [ ] T071 [US5] Run E2E test using chrome-dev MCP
+- [X] T071 [US5] Run E2E test using chrome-dev MCP
   - Run: T066 test - FAQ page
-  - Record: Test results
+  - Record: Test results - 35/35 tests passed
   - If FAIL: Fix and re-run
   - Commit: "✅ [US5] E2Eテスト実行・修正完了"
 
