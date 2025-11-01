@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Sans+JP:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1193d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-[#111618] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">よくあるご質問 (FAQ)</p>
+<p class="text-[#617c89] dark:text-gray-300 text-base font-normal leading-normal">Webサイト制作やシステム開発に関して、お客様からよくいただくご質問をまとめました。</p>
+</div>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#617c89] dark:text-gray-300 flex border-none bg-[#f0f3f4] dark:bg-background-dark/50 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111618] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f0f3f4] dark:bg-background-dark/50 focus:border-none h-full placeholder:text-[#617c89] dark:placeholder-gray-300 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="キーワードで質問を検索" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-col p-4">
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">見積もりは無料ですか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">はい、お見積もりは無料です。お客様のご要望をヒアリングさせていただき、最適なプランをご提案いたします。お気軽にご相談ください。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">見積もりには何が必要ですか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">作りたいWebサイトのイメージ（参考サイトなど）、ページ数、必要な機能など、具体的な情報をご提示いただけますと、より正確な見積もりが可能です。まずはお気軽にご相談ください。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">料金の目安を教えてください。</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">制作内容によって料金は変動します。簡単なポートフォリオサイトから大規模なECサイトまで、ご予算に応じて最適なプランをご提案します。詳しくは料金ページをご覧いただくか、直接お問い合わせください。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">制作期間はどのくらいかかりますか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">Webサイトの規模や機能によって異なりますが、一般的なコーポレートサイトで1〜3ヶ月程度が目安です。お急ぎの場合はご相談ください。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">急ぎの依頼は可能ですか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">スケジュールに空きがあれば対応可能です。特急料金が発生する場合がありますので、まずはお問い合わせください。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">写真や文章はこちらで用意する必要がありますか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">基本的にはお客様にご用意いただいておりますが、ご希望に応じて、プロのカメラマンによる写真撮影や、ライターによる文章作成も別途料金にて承ります。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">ドメインやサーバーの準備はどうすればいいですか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">ドメイン取得やサーバー契約の代行も可能です。Webサイトの専門知識がない方でも安心してご依頼いただけます。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">補助金を利用した制作は可能ですか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">はい、可能です。IT導入補助金など、各種補助金の申請サポートも行っておりますので、お気軽にご相談ください。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">納品後の修正や更新はお願いできますか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">はい、承ります。簡単な修正であれば納品後1ヶ月間は無料で対応いたします。それ以降は、保守・運用プランをご契約いただくか、都度お見積もりとなります。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">保守・運用プランはありますか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">はい、ご用意しております。サーバー管理、定期的なバックアップ、セキュリティ対策、コンテンツ更新など、お客様のニーズに合わせたプランをご提案します。</p>
+</details>
+<details class="flex flex-col border-t border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">打ち合わせはどのように行いますか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">福井県内であれば対面での打ち合わせが可能です。県外のお客様とは、Zoomなどのオンラインミーティングツールを利用して打ち合わせを行います。</p>
+</details>
+<details class="flex flex-col border-t border-b border-b-[#dbe2e6] dark:border-b-gray-700 border-t-[#dbe2e6] dark:border-t-gray-700 py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+<p class="text-[#111618] dark:text-white text-sm font-medium leading-normal">福井県外からの依頼も可能ですか？</p>
+<div class="text-[#111618] dark:text-white group-open:rotate-180 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</summary>
+<p class="text-[#617c89] dark:text-gray-300 text-sm font-normal leading-normal pb-2">はい、全国どこからでもご依頼いただけます。オンラインでの打ち合わせや連絡ツールを活用し、円滑なコミュニケーションを心がけております。</p>
+</details>
+</div>
+<div class="py-10">
+<div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20 text-center">
+<div class="flex flex-col gap-2">
+<h2 class="text-[#111618] dark:text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">解決しない場合はこちら</h2>
+<p class="text-[#617c89] dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto">上記以外のご質問や、より詳しい内容については、お気軽にお問い合わせください。</p>
+</div>
+<div class="flex flex-1 justify-center">
+<div class="flex justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
+<span class="truncate">お問い合わせ</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

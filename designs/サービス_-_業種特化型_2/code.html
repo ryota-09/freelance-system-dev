@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web制作・システム開発</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec7f13",
+                        "background-light": "#F8F5F2",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4" data-alt="福井の風景" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBUnNkG4Ysf6siX-tswdgMvVuIV-867vu-Eg4n4xi1kYWFu7_1BNB_B4KkcK6tcZqysgrxr9a_vcyOb4UH_CVE_hrT1i6hGnHxbGf9e9sv_5YcsvukUoARtGqadnKPC6bJ-UMKVsBZlYkIImNXlYdNOTRSM5LzCToTJZz0_01uwqbQluw2d1D3ENNIWNyp6NoXhAms59Nu-k8x1YiUpnsDmTUus7Gl304_Dyv66l2Mm9DyQ9npNVAfbqwVFY0saKLDISlF3-P9sYl0");'>
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        福井の小さなお店のための、Webのチカラ。
+                                    </h1>
+<h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                        飲食店・美容室・写真家のみなさまへ。
+                                    </h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-gradient-to-r from-orange-500 to-red-500 text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-orange-600 hover:to-red-600 transition-all duration-300">
+<span class="truncate">無料相談はこちら</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-10 px-4 py-10 @container">
+<div class="flex flex-col gap-16">
+<!-- 飲食店向けセクション -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-background-dark p-8 rounded-xl shadow-lg">
+<div class="w-full md:w-1/2">
+<img class="w-full h-auto aspect-video object-cover rounded-lg" data-alt="美味しそうな料理の写真" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRTMIH_K-D4H_7WCW09w4RQZfBR5RFZUQqgi6-kaCDEoglJpiHsY0Fu2C8W5eab0cAmC_duYRgIM5i-YbdiHaYqXM8cwSuz43zVqxtTX9vUMvjEo1b_c8QN2HBIyXqfuWb-HnkcN8fGExW6urPy7q5j4vxMkPZf4rBbmk1DREdmiloWoU-XKAKuorqKaj3cxRjLIVTE9cHXsqs_ow3mQUBzheOWwOdizr_rc69m37wiHt5NOQV6W9yu1BghegpDY7Ldswlnwe-VPk"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-4">
+<h2 class="text-2xl font-bold text-[#E67E22]">小規模飲食店向け</h2>
+<p class="text-[#181411] dark:text-background-light">スマホで簡単更新！美味しそうなメニューをアピールし、予約システム導入で電話対応の手間を削減します。</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-[#181411] dark:text-background-light"><span class="material-symbols-outlined text-[#E67E22]">restaurant_menu</span><span>集客力アップ</span></div>
+<div class="flex items-center gap-2 text-[#181411] dark:text-background-light"><span class="material-symbols-outlined text-[#E67E22]">event_available</span><span>予約管理の効率化</span></div>
+</div>
+<div class="mt-4 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+<div class="flex items-center gap-4">
+<img class="size-16 rounded-full" data-alt="お客様の顔写真" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD7i6l1DvSrzAUncNFZQcIuJf3zkN6KvwJ7NZcqODj9umhwbyslMK-HTEyR6YTpmV00Wdg_znTpt9kUNHrcJ24WoGG0UF1JLCS01aV8NTUPb7nuomKem1Cb67dEzJ2AyecjzXBDMRegY7ZsWP4p7IdgdvhGrwACcZfEfx4xl0aCEZR-vaDK8b2wjwk3w1tqOKKQPlTAwWkW_nTg3vMxkPhOC6UbpodlgRvxQFoFG6mIf_BWxjyrjVrKsdry4wFPxlEjS7QnH7PZcA"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">田中様（飲食店オーナー）</p>
+<p class="text-sm text-[#897561] dark:text-gray-400">“Webサイトから新規のお客様が毎月来るようになりました！予約管理が本当に楽になりました。”</p>
+</div>
+</div>
+</div>
+<button class="mt-4 flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#E67E22] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-orange-700 transition-colors">
+<span class="truncate">詳しく見る</span>
+</button>
+</div>
+</div>
+<!-- 美容室・サロン向けセクション -->
+<div class="flex flex-col md:flex-row-reverse gap-8 items-center bg-white dark:bg-background-dark p-8 rounded-xl shadow-lg">
+<div class="w-full md:w-1/2">
+<img class="w-full h-auto aspect-video object-cover rounded-lg" data-alt="美容室の施術風景" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6E3oKlC6gx8L8iP_N3awrJ-U3UWzuevFZWwigMUqPyOOeq5SUvSWLLbxtfymF5IMUeY7VFT0buoOYX6CbYRPw8djGzrKdZQ5zOQQdM1Y4lyqvvjW_ZQQ8P0xrpWs8lg5uwMu5TaRKADplmfpevfzEluar2tKO4m9MHORSnu384zq_6vUY4haAZu-spyA-xZOlkhvtFSG3pWoHxEX_fYRXYFqYDYrJ0vF8rvKQbogCbRw_v7DVE5hFNsd7Tn6_wSiQyvg8dEBPmiM"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-4">
+<h2 class="text-2xl font-bold text-[#E0B4B4]">美容室・サロン向け</h2>
+<p class="text-[#181411] dark:text-background-light">お客様の『なりたい』を叶えるスタイル写真を美しく掲載し、オンライン予約で24時間お客様を逃しません。</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-[#181411] dark:text-background-light"><span class="material-symbols-outlined text-[#E0B4B4]">style</span><span>魅力的なスタイル紹介</span></div>
+<div class="flex items-center gap-2 text-[#181411] dark:text-background-light"><span class="material-symbols-outlined text-[#E0B4B4]">calendar_month</span><span>24時間オンライン予約</span></div>
+</div>
+<div class="mt-4 p-4 bg-pink-50 dark:bg-pink-900/20 rounded-lg">
+<div class="flex items-center gap-4">
+<img class="size-16 rounded-full" data-alt="お客様の顔写真" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf5vxg0w89JW-f_UTfRRJVJTwPpNDoj0PePz7s4RVSmJ-QO_OxiXVk3lJSkxgDfcGawElxaA3-lc5QIcn6o62oHhIrWTINotw2cwh1Zo1zgtyb3alJD1I_WkOCpsbBfKqpFDCAPDmlBD9QFciVkeqzlkv61hUn7jTB0pGBfkj7674TL02DMIHN3MSgp-IxadoCCJ7EWk5b9fJF3hGkedBrvNG_U2RE0U8NJcCRw5Ba9B8-6mDh1sFsUwmSMwG416HY7Erm8IZM2fI"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">佐藤様（サロンオーナー）</p>
+<p class="text-sm text-[#897561] dark:text-gray-400">“素敵なサイトのおかげで、新しいお客様からのお問い合わせが増えました。更新も簡単で助かっています。”</p>
+</div>
+</div>
+</div>
+<button class="mt-4 flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#E0B4B4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-pink-400 transition-colors">
+<span class="truncate">詳しく見る</span>
+</button>
+</div>
+</div>
+<!-- 写真家向けセクション -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-white dark:bg-background-dark p-8 rounded-xl shadow-lg">
+<div class="w-full md:w-1/2">
+<img class="w-full h-auto aspect-video object-cover rounded-lg" data-alt="美しい風景写真" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJvxgyKmofwmIQKhiBP90g0ISbpdgU_B2T4SqSf5-hXe4nGFvrg94mI6IYBs0Kv5BKnOahMg5ZZUhIwufHIUjn-6LjQVxfN6QfFAcjQQNAdKb3MlJp-2Hi7xP2KqPv6U_lj-gMQNiBK4XKDM3I8YsryNPaApqcu2Gk-C2Uxd1NoKicluoMbtVPsELdVM717swsMXoYRPwMKGbqc9CTcL0TDAVReR8ACEfHMrmmeRdiena1yJ2j0atsUC1YRIGuUZS5aMwJ_hV8G9Q"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-4">
+<h2 class="text-2xl font-bold text-[#27AE60]">写真家向け</h2>
+<p class="text-[#181411] dark:text-background-light">あなたの世界観が伝わるポートフォリオサイトを制作し、作品販売機能で新たな収益の柱を築きます。</p>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-[#181411] dark:text-background-light"><span class="material-symbols-outlined text-[#27AE60]">photo_library</span><span>世界観が伝わるポートフォリオ</span></div>
+<div class="flex items-center gap-2 text-[#181411] dark:text-background-light"><span class="material-symbols-outlined text-[#27AE60]">shopping_cart</span><span>作品販売で収益化</span></div>
+</div>
+<div class="mt-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+<div class="flex items-center gap-4">
+<img class="size-16 rounded-full" data-alt="お客様の顔写真" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0CVptymyK4M6aWao4SnDw8RjMpm47VGgrh2RHiFVvOEZrc6k0nSU0wKZPJepHThUt2cVc_7hQPwKZnc2XW92F_CH9A2bwnvyjQ-xWK4KketW-b-5XQhPVbe2IsR3xeudMw7sV7nY81Sf2irV6raRtdjj1Z9KRTiHRjeo9wwN375sdQG8-6YeNAwoGbHrZQVP0lpAp-NZ5TWyOBVQZpDrKVPysW7a-2vHjTduhjaYAAPAnqCOZI3F4atZDsLowJU5Ch9WKCW_4xhA"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">鈴木様（写真家）</p>
+<p class="text-sm text-[#897561] dark:text-gray-400">“ポートフォリオサイトを見て、撮影の依頼が舞い込むようになりました。作品の販売も好調です。”</p>
+</div>
+</div>
+</div>
+<button class="mt-4 flex min-w-[84px] max-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#27AE60] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-green-700 transition-colors">
+<span class="truncate">詳しく見る</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="@container">
+<div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-[#181411] dark:text-background-light tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
+                                    まずは30分、あなたのお店の悩みをお聞かせください。
+                                </h1>
+<p class="text-[#181411] dark:text-background-light text-base font-normal leading-normal max-w-[720px] mx-auto">無料相談でWeb活用の第一歩を。</p>
+</div>
+<div class="flex flex-1 justify-center">
+<div class="flex justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-gradient-to-r from-orange-500 to-red-500 text-white text-base font-bold leading-normal tracking-[0.015em] grow hover:from-orange-600 hover:to-red-600 transition-all duration-300">
+<span class="truncate">無料相談を予約する</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+<div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+<a class="text-[#897561] dark:text-gray-400 text-base font-normal leading-normal min-w-40" href="#">会社情報</a>
+<a class="text-[#897561] dark:text-gray-400 text-base font-normal leading-normal min-w-40" href="#">お問い合わせ</a>
+<a class="text-[#897561] dark:text-gray-400 text-base font-normal leading-normal min-w-40" href="#">プライバシーポリシー</a>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="#">
+<span class="material-symbols-outlined text-[#897561] dark:text-gray-400">social_leaderboard</span>
+</a>
+<a href="#">
+<svg aria-hidden="true" class="w-6 h-6 text-[#897561] dark:text-gray-400" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a href="#">
+<svg aria-hidden="true" class="w-6 h-6 text-[#897561] dark:text-gray-400" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zm-1.002 11.667a4.667 4.667 0 100-9.334 4.667 4.667 0 000 9.334zM16.95 6.516a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+<p class="text-[#897561] dark:text-gray-400 text-base font-normal leading-normal">© 2023 Web制作・システム開発 All Rights Reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

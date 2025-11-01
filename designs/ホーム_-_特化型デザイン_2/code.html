@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web Production for Fukui's Businesses</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec8013",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "Noto Sans JP", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Epilogue', 'Noto Sans JP', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6e0db] dark:border-[#3a322a] px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-[#181411] dark:text-background-light">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#181411] dark:text-background-light text-lg font-bold leading-tight tracking-[-0.015em]">Fukui Web Solutions</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#181411] dark:text-background-light text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-[#181411] dark:text-background-light text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-[#181411] dark:text-background-light text-sm font-medium leading-normal" href="#">Services</a>
+<a class="text-[#181411] dark:text-background-light text-sm font-medium leading-normal" href="#">Portfolio</a>
+<a class="text-[#181411] dark:text-background-light text-sm font-medium leading-normal" href="#">Contact</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Free Consultation</span>
+</button>
+</div>
+<button class="md:hidden flex items-center justify-center size-10 text-[#181411] dark:text-background-light">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col gap-12 md:gap-20">
+<div class="p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-4" data-alt="A cozy restaurant interior" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjCgJ-xSfzqUDDvUNshC8ZSqBNixXZYhAWfemNdCvVzq_QBdCXHrxBy7Ope3JmaShKhOXexr-MlDtIiSrFECqCL8nUyBAuR6jiEJukD9x_jB_qlV0SvMkfBgYHisP98fA2u-7_c3VPsBQq8r8UhzRofp9x3I0RYCqpmkM5APF-XbTYwgR0GPtP06OsHGjz2PeFC6Q_XHoxzthNLxUMtsGfI6fyI_xVGnfm8AQmj4O_Evt27SwWO_lULhJtqBxhXuS0mxvucu16u5o');">
+<div class="flex flex-col gap-4 text-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">福井の個人事業に、成果に直結するWebと予約導線を。</h1>
+<h2 class="text-white text-sm font-normal leading-normal md:text-base">福井県内の飲食店、美容室・サロン、写真家など、小規模事業者のためのカスタムWebサイト制作と予約システム開発を提供します。</h2>
+</div>
+<div class="flex flex-wrap gap-3 justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">まずは無料で相談する</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#f4f2f0] dark:bg-background-dark text-[#181411] dark:text-background-light text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">料金プランを見てみる</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-12 md:gap-20 px-4">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col items-center gap-2 text-center">
+<h2 class="text-[#181411] dark:text-background-light text-2xl font-bold leading-tight tracking-[-0.015em] md:text-3xl">信頼と実績</h2>
+<p class="text-base text-[#564e49] dark:text-[#a89d93]">多くのお客様から高い評価をいただいています。</p>
+</div>
+<div class="relative w-full overflow-hidden">
+<div class="flex animate-scroll-infinite" style="animation-duration: 20s; animation-direction: normal; animation-play-state: running;">
+<div class="flex w-full flex-shrink-0 flex-row justify-around gap-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a] min-w-[280px]">
+<div class="flex items-center gap-4">
+<img alt="Portrait of a smiling man" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRi_JMElUOnpVapsSdAb1oOJNUgg8H4AyvmsCOemJ2S2KRog3jPTI1hTGmYVTsCtRhMmTh9q4bq6fozK2ss6kUko5xDVp-9RqbkAtQ-9Inuf16_31XjdTMWpEOK2zcGp18VMvO9nFLiJYiHiIUSqpwP0yEffYhXCY3UUodF9NMVkwbHqaYf4KAumriapRLr6D7MKX3S85mxJXWos7C3SYWPkiuoc2GU0hvuQfCsFziJvI0NPZZWNxwt0G5h5eJg42xDRO-DlgcZrc"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">田中様</p>
+<p class="text-sm text-[#564e49] dark:text-[#a89d93]">福井市・飲食店オーナー</p>
+</div>
+</div>
+<p class="text-[#181411] dark:text-background-light">「Webサイトからの予約が2倍に！お店の魅力が伝わると好評です。」</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a] min-w-[280px]">
+<div class="flex items-center gap-4">
+<img alt="Portrait of a smiling woman" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSX2iF2K44BZ3Rn1A-pngmrQznZDAu5h-y2q8nTfQOjC-U9g_e3fUnPmYToyg3Ze-oU0NRohJAa8qvPOZh3RmEQzexavgKN_ZXE6-R0Qkdg6D5Klpl_hmFG_jDvZ3KMcyXxsVLwLIFf4q8DZli6vwjWz74dHuohsb8UOco4RQuRXk4gczFTpvHfZ5oRhykkNT2dPyGj2jqtWaWuBm1xyLTT6N9yB4FYv-BzvpMDN0E-qxC9bFZAL0qgKRxB_YdjpY6qvbtBQc3bnc"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">鈴木様</p>
+<p class="text-sm text-[#564e49] dark:text-[#a89d93]">坂井市・美容師</p>
+</div>
+</div>
+<p class="text-[#181411] dark:text-background-light">「予約管理が楽になり、施術に集中できます。新規のお客様も増えました。」</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col justify-center items-center gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a]">
+<p class="text-[#181411] dark:text-background-light text-base font-medium leading-normal">福井県内での制作実績</p>
+<p class="text-[#181411] dark:text-background-light tracking-light text-4xl font-bold leading-tight">50+</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col justify-center items-center gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a]">
+<p class="text-[#181411] dark:text-background-light text-base font-medium leading-normal">お客様満足度</p>
+<p class="text-[#181411] dark:text-background-light tracking-light text-4xl font-bold leading-tight">95%</p>
+</div>
+</div>
+<div aria-hidden="true" class="flex w-full flex-shrink-0 flex-row justify-around gap-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a] min-w-[280px]">
+<div class="flex items-center gap-4">
+<img alt="Portrait of a smiling man" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRi_JMElUOnpVapsSdAb1oOJNUgg8H4AyvmsCOemJ2S2KRog3jPTI1hTGmYVTsCtRhMmTh9q4bq6fozK2ss6kUko5xDVp-9RqbkAtQ-9Inuf16_31XjdTMWpEOK2zcGp18VMvO9nFLiJYiHiIUSqpwP0yEffYhXCY3UUodF9NMVkwbHqaYf4KAumriapRLr6D7MKX3S85mxJXWos7C3SYWPkiuoc2GU0hvuQfCsFziJvI0NPZZWNxwt0G5h5eJg42xDRO-DlgcZrc"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">田中様</p>
+<p class="text-sm text-[#564e49] dark:text-[#a89d93]">福井市・飲食店オーナー</p>
+</div>
+</div>
+<p class="text-[#181411] dark:text-background-light">「Webサイトからの予約が2倍に！お店の魅力が伝わると好評です。」</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a] min-w-[280px]">
+<div class="flex items-center gap-4">
+<img alt="Portrait of a smiling woman" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSX2iF2K44BZ3Rn1A-pngmrQznZDAu5h-y2q8nTfQOjC-U9g_e3fUnPmYToyg3Ze-oU0NRohJAa8qvPOZh3RmEQzexavgKN_ZXE6-R0Qkdg6D5Klpl_hmFG_jDvZ3KMcyXxsVLwLIFf4q8DZli6vwjWz74dHuohsb8UOco4RQuRXk4gczFTpvHfZ5oRhykkNT2dPyGj2jqtWaWuBm1xyLTT6N9yB4FYv-BzvpMDN0E-qxC9bFZAL0qgKRxB_YdjpY6qvbtBQc3bnc"/>
+<div>
+<p class="font-bold text-[#181411] dark:text-background-light">鈴木様</p>
+<p class="text-sm text-[#564e49] dark:text-[#a89d93]">坂井市・美容師</p>
+</div>
+</div>
+<p class="text-[#181411] dark:text-background-light">「予約管理が楽になり、施術に集中できます。新規のお客様も増えました。」</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col justify-center items-center gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a]">
+<p class="text-[#181411] dark:text-background-light text-base font-medium leading-normal">福井県内での制作実績</p>
+<p class="text-[#181411] dark:text-background-light tracking-light text-4xl font-bold leading-tight">50+</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col justify-center items-center gap-2 rounded-xl p-6 border border-[#e6e0db] dark:border-[#3a322a]">
+<p class="text-[#181411] dark:text-background-light text-base font-medium leading-normal">お客様満足度</p>
+<p class="text-[#181411] dark:text-background-light tracking-light text-4xl font-bold leading-tight">95%</p>
+</div>
+</div>
+</div>
+<style>
+                @keyframes scroll-infinite {
+                    to {
+                        transform: translateX(-100%);
+                    }
+                }
+                .animate-scroll-infinite {
+                    animation: scroll-infinite linear infinite;
+                }
+            </style>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-12 md:gap-20">
+<div class="bg-primary/10 dark:bg-primary/5 rounded-xl p-4 md:p-8">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<img class="w-full md:w-1/2 rounded-lg object-cover h-64 md:h-auto" data-alt="A cozy restaurant with happy customers dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA4d_NausLsWBGYA3qLE1JrWpL_zytfJdK-4LnY5lPbWYs8mRZaN0XmZLEqGo3gWjNYNDMtLCbpeHAE7IN68vHz3EUNN_-idwgPVLqkrt39i6R5_Wk69uLWWq7EAQLYs482i38HcYf5zF4f6MWVCrabVcCTve59zJgvuH6PhNk70fxqi3Rsjv5OE4NGW8fdfo2YkK3U0gGLRWfnY-H1xPD4vO6GeCNs9pXRpPN95MfrPVDTkFPuvp3yhJ7SFXosYATPrfynJPVFyM"/>
+<div class="flex flex-col gap-4 md:w-1/2">
+<span class="text-primary text-sm font-bold">飲食店オーナー様へ</span>
+<h3 class="text-2xl font-bold text-[#181411] dark:text-background-light">グルメサイト頼りの集客から脱却し、安定した売上を</h3>
+<p class="text-base text-[#564e49] dark:text-[#a89d93]">美味しそうな料理の写真とストーリーで、お店のファンを増やします。オンライン予約システムで、機会損失を防ぎます。</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] self-start">
+<span class="truncate">飲食店向け詳細を見る</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 dark:bg-primary/5 rounded-xl p-4 md:p-8">
+<div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+<img class="w-full md:w-1/2 rounded-lg object-cover h-64 md:h-auto" data-alt="A stylish hair salon with a client getting their hair done." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt0spt87rGy8wGvNYWrtY6wX4dbyacGynAer-XbKBy3mNnflipGxR89k3QxAJVHZlUTE0yEs4tx2FWUQYrWIBhdz79n6zXN2_VfCZq6XeMV8sKaxY7xPSjXJgDqP8BJVND3DFrpFCB8dXT7wlju-TbidF-6bY9LOm_kjHk7KzHedpWhoCYlgPHp4Nc3q8WtBp8JO74PDDkzp4sQ1pDihGz5UnrITF6xBzV3QqwPcaaGSzDAD4t-3EkhVKX4cS6ZdUqnccBP_6LUEg"/>
+<div class="flex flex-col gap-4 md:w-1/2">
+<span class="text-primary text-sm font-bold">美容室・サロンオーナー様へ</span>
+<h3 class="text-2xl font-bold text-[#181411] dark:text-background-light">電話対応と予約管理の手間を削減し、お客様サービスに集中</h3>
+<p class="text-base text-[#564e49] dark:text-[#a89d93]">24時間受付可能なネット予約で、新規顧客を獲得。顧客管理機能でリピート率も向上させます。</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] self-start">
+<span class="truncate">美容室・サロン向け詳細を見る</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 dark:bg-primary/5 rounded-xl p-4 md:p-8">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<img class="w-full md:w-1/2 rounded-lg object-cover h-64 md:h-auto" data-alt="A photographer's portfolio website displayed on a laptop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpwP0w39eT1qdSHuldYAw7osRpUGkmAgpKSM8j5jk7Hriu5RzbrcA8-p6n4_AjlLSvHJdgKY_dYiRvVaV_U-1-8kut6VZTUMyjinpzLzdGgbcrj2hctfT1UkLCq3qVRdnbDCa52ifcH2-VuUGmIG8Os_4yHK0VqlDXQuMPLvVRmUKNivynXRIzRAt7E5iHTYzD7moiDcchIpgFv2Wce7f6eeAZEPTgAN5UJvI8_MZP1gBRK97e2TRpUXFOV-w8epaFvfH8CmrTVjo"/>
+<div class="flex flex-col gap-4 md:w-1/2">
+<span class="text-primary text-sm font-bold">写真家・フォトグラファー様へ</span>
+<h3 class="text-2xl font-bold text-[#181411] dark:text-background-light">あなたの世界観を伝える、作品が主役のポートフォリオサイト</h3>
+<p class="text-base text-[#564e49] dark:text-[#a89d93]">あなたの作品を最高に美しく見せるデザイン。撮影予約や問い合わせもスムーズに。</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] self-start">
+<span class="truncate">写真家向け詳細を見る</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/20 dark:bg-primary/10 rounded-xl p-8 md:p-12 flex flex-col items-center gap-6 text-center">
+<h2 class="text-2xl md:text-3xl font-bold text-[#181411] dark:text-background-light">Webサイト制作でビジネスを加速させませんか？</h2>
+<p class="text-base text-[#564e49] dark:text-[#a89d93] max-w-2xl">まずはお気軽にご相談ください。あなたのビジネスに最適なプランをご提案します。</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">無料で相談する</span>
+</button>
+</div>
+</main>
+<footer class="mt-20 border-t border-[#e6e0db] dark:border-[#3a322a] pt-10 pb-5 px-4">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4 text-[#181411] dark:text-background-light">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#181411] dark:text-background-light text-lg font-bold">Fukui Web Solutions</h2>
+</div>
+<div class="flex gap-6 text-sm text-[#564e49] dark:text-[#a89d93]">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+<p class="text-center text-xs text-[#564e49] dark:text-[#a89d93] mt-8">© 2024 Fukui Web Solutions. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

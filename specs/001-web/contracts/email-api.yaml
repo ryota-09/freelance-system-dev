@@ -1,0 +1,227 @@
+openapi: 3.0.3
+info:
+  title: Email Integration API
+  description: Internal API specification for email sending using Resend service
+  version: 1.0.0
+servers:
+  - url: https://api.resend.com
+    description: Resend production API
+
+paths:
+  /emails:
+    post:
+      summary: Send transactional email
+      description: Sends email via Resend API. Used internally by contact form and booking endpoints.
+      operationId: sendEmail
+      tags:
+        - Email
+      security:
+        - ApiKey: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+            example:
+              from: "contact@yourdomain.com"
+              to: ["yamada@cafe-fukui.example.com"]
+              subject: "お問い合わせありがとうございます【福井Web制作】"
+              html: "<h1>お問い合わせありがとうございます</h1><p>以下の内容で承りました...</p>"
+              reply_to: "info@yourdomain.com"
+      responses:
+        '200':
+          description: Email sent successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailResponse'
+              example:
+                id: "4ef9a417-02e9-4d39-ad75-9611e0fcc33c"
+                from: "contact@yourdomain.com"
+                to: ["yamada@cafe-fukui.example.com"]
+                created_at: "2025-10-29T10:30:00.000Z"
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailErrorResponse'
+              example:
+                statusCode: 400
+                message: "Missing required field: to"
+                name: "validation_error"
+        '401':
+          description: Authentication error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailErrorResponse'
+              example:
+                statusCode: 401
+                message: "Invalid API key"
+                name: "authentication_error"
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailErrorResponse'
+              example:
+                statusCode: 429
+                message: "Too many requests"
+                name: "rate_limit_error"
+
+components:
+  schemas:
+    EmailRequest:
+      type: object
+      required:
+        - from
+        - to
+        - subject
+      properties:
+        from:
+          type: string
+          format: email
+          description: Sender email address (must be verified domain)
+          example: "contact@yourdomain.com"
+        to:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            format: email
+          description: Recipient email addresses
+          example: ["yamada@cafe-fukui.example.com"]
+        cc:
+          type: array
+          items:
+            type: string
+            format: email
+          description: CC recipients (optional)
+        bcc:
+          type: array
+          items:
+            type: string
+            format: email
+          description: BCC recipients (optional)
+        subject:
+          type: string
+          minLength: 1
+          maxLength: 998
+          description: Email subject
+          example: "お問い合わせありがとうございます【福井Web制作】"
+        text:
+          type: string
+          description: Plain text body (optional if html provided)
+          example: "お問い合わせありがとうございます。以下の内容で承りました..."
+        html:
+          type: string
+          description: HTML body (optional if text provided)
+          example: "<h1>お問い合わせありがとうございます</h1><p>以下の内容で承りました...</p>"
+        reply_to:
+          type: string
+          format: email
+          description: Reply-to address
+          example: "info@yourdomain.com"
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+          description: Email tags for tracking
+          example:
+            - name: "category"
+              value: "inquiry-confirmation"
+
+    EmailResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique email identifier
+          example: "4ef9a417-02e9-4d39-ad75-9611e0fcc33c"
+        from:
+          type: string
+          format: email
+          description: Sender email
+          example: "contact@yourdomain.com"
+        to:
+          type: array
+          items:
+            type: string
+            format: email
+          description: Recipients
+          example: ["yamada@cafe-fukui.example.com"]
+        created_at:
+          type: string
+          format: date-time
+          description: Email creation timestamp
+          example: "2025-10-29T10:30:00.000Z"
+
+    EmailErrorResponse:
+      type: object
+      required:
+        - statusCode
+        - message
+        - name
+      properties:
+        statusCode:
+          type: integer
+          description: HTTP status code
+          example: 400
+        message:
+          type: string
+          description: Error message
+          example: "Missing required field: to"
+        name:
+          type: string
+          description: Error type
+          example: "validation_error"
+
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Resend API key (format: "Bearer YOUR_API_KEY")
+
+security:
+  - ApiKey: []
+
+# Email Templates
+#
+# The following React Email templates are used:
+#
+# 1. ContactFormConfirmation.tsx
+#    - Sent to: Client (inquiry submitter)
+#    - Subject: "お問い合わせありがとうございます【福井Web制作】"
+#    - Content: Confirms receipt, summarizes inquiry, commits to 1 business day response
+#
+# 2. ContactFormNotification.tsx
+#    - Sent to: Freelancer (internal notification)
+#    - Subject: "[新規問い合わせ] {companyName} 様"
+#    - Content: Full inquiry details, client contact info, quick action links
+#
+# 3. BookingConfirmation.tsx
+#    - Sent to: Client (booking requester)
+#    - Subject: "無料相談のご予約を承りました【福井Web制作】"
+#    - Content: Confirms booking request, next steps, cancellation policy
+#
+# 4. BookingNotification.tsx
+#    - Sent to: Freelancer (internal notification)
+#    - Subject: "[新規予約] {companyName} 様 - 無料相談"
+#    - Content: Booking details, client info, calendar integration link
+#
+# Template rendering is handled by:
+# - React Email library
+# - Resend integration in lib/email.ts
+# - Server Actions in app/api/contact/ and app/api/booking/
