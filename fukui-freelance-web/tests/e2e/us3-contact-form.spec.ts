@@ -82,7 +82,7 @@ test.describe('US3: Contact Form Submission', () => {
     await page.fill('input[name="email"]', 'invalid-email');
 
     // Submit to trigger validation (this will show all validation errors)
-    const submitButton = page.getByRole('button', { name: /送信|お問い合わせを送信|Submit/i });
+    const submitButton = page.getByRole('button', { name: /送信|お問い合わせを送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Wait a bit for validation

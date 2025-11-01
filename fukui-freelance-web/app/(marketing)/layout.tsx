@@ -75,6 +75,7 @@ export default function MarketingLayout({
             <a
               href="tel:0776123456"
               className="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-brand-600"
+              aria-label="電話をかける: 0776-12-3456"
             >
               <Phone className="h-4 w-4" />
               0776-12-3456
@@ -91,9 +92,11 @@ export default function MarketingLayout({
           <div className="flex items-center gap-3 lg:hidden">
             <a
               href="tel:0776123456"
-              className="text-sm font-semibold text-gray-900"
+              className="flex items-center gap-1 text-sm font-semibold text-gray-900 hover:text-brand-600"
+              aria-label="電話をかける: 0776-12-3456"
             >
               <Phone className="h-5 w-5" />
+              <span className="text-xs sm:text-sm">0776-12-3456</span>
             </a>
             <button
               type="button"

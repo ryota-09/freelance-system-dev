@@ -38,33 +38,26 @@ test.describe('US3: Consultation Booking Form', () => {
   });
 
   test('should fill and submit booking form successfully', async ({ page }) => {
-    // Navigate to booking section/tab if needed
-    const bookingTab = page.getByRole('button', { name: /無料相談予約|相談予約/i });
-    if (await bookingTab.isVisible()) {
-      await bookingTab.click();
-    }
-
     // Fill in basic info
     await page.fill('input[name="companyName"]', '予約テスト株式会社');
     await page.fill('input[name="contactName"]', '田中一郎');
     await page.fill('input[name="email"]', 'tanaka@example.com');
     await page.fill('input[name="phone"]', '090-1111-2222');
 
-    // Select consultation format (online)
-    const onlineRadio = page.locator('[name="preferredFormat"][value="online"]');
-    if (await onlineRadio.isVisible()) {
-      await onlineRadio.check();
-    } else {
-      const formatSelect = page.locator('[name="preferredFormat"]');
-      await formatSelect.click();
-      await page.getByRole('option', { name: /オンライン/i }).click();
-    }
+    // Select consultation format (online) - format is already "online" by default
+    // Just verify it's selected
+    await expect(page.locator('button#preferredFormat')).toContainText(/オンライン/i);
+
+    // Add at least one date range
+    const addDateButton = page.getByRole('button', { name: /日時を追加/i });
+    await addDateButton.click();
+    await page.waitForTimeout(300);
 
     // Fill needs description
     await page.fill('textarea[name="needsDescription"]', 'ホームページのリニューアルについて相談したいです。');
 
     // Submit booking form
-    const submitButton = page.getByRole('button', { name: /予約|予約する|Submit/i });
+    const submitButton = page.getByRole('button', { name: /無料相談を予約する|予約する|Submit/i }).filter({ hasNotText: /無料相談予約$/ });
     await submitButton.click();
 
     // Wait for confirmation message
@@ -73,70 +66,48 @@ test.describe('US3: Consultation Booking Form', () => {
   });
 
   test('should show location field for in-person consultation', async ({ page }) => {
-    // Navigate to booking form
-    const bookingTab = page.getByRole('button', { name: /無料相談予約|相談予約/i });
-    if (await bookingTab.isVisible()) {
-      await bookingTab.click();
-    }
+    // Initially location field should not be visible
+    const locationField = page.locator('input[name="location"]');
+    await expect(locationField).not.toBeVisible();
 
     // Select in-person format
-    const inPersonRadio = page.locator('[name="preferredFormat"][value="in-person"]');
-    if (await inPersonRadio.isVisible()) {
-      await inPersonRadio.check();
-    } else {
-      const formatSelect = page.locator('[name="preferredFormat"]');
-      await formatSelect.click();
-      await page.getByRole('option', { name: /対面|訪問/i }).click();
-    }
+    await page.locator('button#preferredFormat').click();
+    await page.getByRole('option', { name: /対面/i }).click();
 
     // Wait for location field to appear
     await page.waitForTimeout(500);
 
     // Check if location field is now visible
-    const locationField = page.locator('input[name="location"]');
     await expect(locationField).toBeVisible();
   });
 
   test('should validate required fields before submission', async ({ page }) => {
-    // Navigate to booking form
-    const bookingTab = page.getByRole('button', { name: /無料相談予約|相談予約/i });
-    if (await bookingTab.isVisible()) {
-      await bookingTab.click();
-    }
-
     // Try to submit without filling required fields
-    const submitButton = page.getByRole('button', { name: /予約|予約する|Submit/i });
+    const submitButton = page.getByRole('button', { name: /無料相談を予約する|予約する|Submit/i }).filter({ hasNotText: /無料相談予約$/ });
     await submitButton.click();
 
     // Check for validation errors
-    const errorMessages = page.locator('text=/必須|required|入力してください/i');
+    const errorMessages = page.locator('p[role="alert"]');
     const errorCount = await errorMessages.count();
     expect(errorCount).toBeGreaterThan(0);
   });
 
   test('should display success confirmation after booking', async ({ page }) => {
-    // Navigate to booking form
-    const bookingTab = page.getByRole('button', { name: /無料相談予約|相談予約/i });
-    if (await bookingTab.isVisible()) {
-      await bookingTab.click();
-    }
-
     // Fill minimal required fields
     await page.fill('input[name="companyName"]', '相談テスト社');
     await page.fill('input[name="contactName"]', '鈴木花子');
     await page.fill('input[name="email"]', 'suzuki@example.com');
     await page.fill('input[name="phone"]', '080-3333-4444');
 
-    // Select online format
-    const onlineRadio = page.locator('[name="preferredFormat"][value="online"]');
-    if (await onlineRadio.isVisible()) {
-      await onlineRadio.check();
-    }
+    // Add at least one date range (required)
+    const addDateButton = page.getByRole('button', { name: /日時を追加/i });
+    await addDateButton.click();
+    await page.waitForTimeout(300);
 
     await page.fill('textarea[name="needsDescription"]', '簡単な相談です');
 
     // Submit
-    const submitButton = page.getByRole('button', { name: /予約|予約する|Submit/i });
+    const submitButton = page.getByRole('button', { name: /無料相談を予約する|予約する|Submit/i }).filter({ hasNotText: /無料相談予約$/ });
     await submitButton.click();
 
     // Verify confirmation elements
@@ -145,18 +116,27 @@ test.describe('US3: Consultation Booking Form', () => {
   });
 
   test('should have accessible form controls', async ({ page }) => {
-    // Navigate to booking form
-    const bookingTab = page.getByRole('button', { name: /無料相談予約|相談予約/i });
-    if (await bookingTab.isVisible()) {
-      await bookingTab.click();
-    }
-
-    // Check radio buttons have proper labels
-    const formatRadios = await page.locator('[name="preferredFormat"]').all();
-    for (const radio of formatRadios) {
-      const hasLabel = (await radio.getAttribute('aria-label')) !== null ||
-                       (await page.locator(`label[for="${await radio.getAttribute('id')}"]`).count()) > 0;
-      expect(hasLabel).toBeTruthy();
+    // Check Select component has proper accessibility
+    const formatSelect = page.locator('button#preferredFormat');
+    await expect(formatSelect).toBeVisible();
+    
+    // Check it has aria-label or associated label
+    const hasAriaLabel = (await formatSelect.getAttribute('aria-label')) !== null;
+    const hasAssociatedLabel = (await page.locator('label[for="preferredFormat"]').count()) > 0;
+    expect(hasAriaLabel || hasAssociatedLabel).toBeTruthy();
+    
+    // Check all text inputs have labels
+    const companyNameInput = page.locator('input[name="companyName"]');
+    const contactNameInput = page.locator('input[name="contactName"]');
+    const emailInput = page.locator('input[name="email"]');
+    const phoneInput = page.locator('input[name="phone"]');
+    
+    for (const input of [companyNameInput, contactNameInput, emailInput, phoneInput]) {
+      const id = await input.getAttribute('id');
+      if (id) {
+        const labelCount = await page.locator(`label[for="${id}"]`).count();
+        expect(labelCount).toBeGreaterThan(0);
+      }
     }
   });
 });

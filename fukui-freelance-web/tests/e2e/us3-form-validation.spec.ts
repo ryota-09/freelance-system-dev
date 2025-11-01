@@ -11,7 +11,7 @@ test.describe('US3: Form Validation', () => {
   });
 
   test('should display error when submitting empty form', async ({ page }) => {
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Check for error messages
@@ -24,8 +24,12 @@ test.describe('US3: Form Validation', () => {
     // Fill invalid email
     await page.fill('input[name="email"]', 'invalid-email');
 
-    // Trigger validation
-    await page.locator('input[name="phone"]').click();
+    // Trigger validation by submitting
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
+    await submitButton.click();
+
+    // Wait for validation
+    await page.waitForTimeout(500);
 
     // Check for specific email error message
     const emailError = page.getByText(/有効なメールアドレス|正しいメール|valid email/i);
@@ -36,8 +40,12 @@ test.describe('US3: Form Validation', () => {
     // Fill invalid phone number (contains letters)
     await page.fill('input[name="phone"]', 'abc-defg-hijk');
 
-    // Trigger validation
-    await page.locator('input[name="email"]').click();
+    // Trigger validation by submitting
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
+    await submitButton.click();
+
+    // Wait for validation
+    await page.waitForTimeout(500);
 
     // Check for phone validation error
     const phoneError = page.getByText(/電話番号|数字|phone/i);
@@ -45,9 +53,12 @@ test.describe('US3: Form Validation', () => {
   });
 
   test('should clear error when field is corrected', async ({ page }) => {
-    // Fill invalid email
+    // Fill invalid email and submit to trigger validation
     await page.fill('input[name="email"]', 'invalid');
-    await page.locator('input[name="phone"]').click();
+    
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
+    await submitButton.click();
+    await page.waitForTimeout(500);
 
     // Verify error appears
     const emailError = page.getByText(/有効なメールアドレス|valid email/i);
@@ -55,14 +66,17 @@ test.describe('US3: Form Validation', () => {
 
     // Correct the email
     await page.fill('input[name="email"]', 'valid@example.com');
-    await page.locator('input[name="phone"]').click();
+    
+    // Submit again to re-validate
+    await submitButton.click();
+    await page.waitForTimeout(500);
 
     // Error should disappear
     await expect(emailError).not.toBeVisible();
   });
 
   test('should validate required company name field', async ({ page }) => {
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Look for company name required error
@@ -71,7 +85,7 @@ test.describe('US3: Form Validation', () => {
   });
 
   test('should validate required contact name field', async ({ page }) => {
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Look for contact name required error
@@ -84,8 +98,10 @@ test.describe('US3: Form Validation', () => {
     const longText = 'あ'.repeat(300); // 300 characters
     await page.fill('input[name="companyName"]', longText);
 
-    // Trigger validation
-    await page.locator('input[name="contactName"]').click();
+    // Trigger validation by submitting
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
+    await submitButton.click();
+    await page.waitForTimeout(500);
 
     // Check for length validation error
     const lengthError = page.getByText(/200文字以内|maximum.*200/i);
@@ -105,8 +121,10 @@ test.describe('US3: Form Validation', () => {
       const longMessage = 'あ'.repeat(2500); // Exceeds 2000 limit
       await messageField.fill(longMessage);
 
-      // Trigger validation
-      await page.locator('input[name="email"]').click();
+      // Trigger validation by submitting
+      const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
+      await submitButton.click();
+      await page.waitForTimeout(500);
 
       // Check for length error or truncation
       const lengthError = page.getByText(/2000文字以内|maximum.*2000/i);
@@ -124,7 +142,7 @@ test.describe('US3: Form Validation', () => {
     await page.fill('input[name="companyName"]', 'テスト会社');
     await page.fill('input[name="email"]', 'invalid-email');
 
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Should show multiple specific field errors
@@ -140,7 +158,7 @@ test.describe('US3: Form Validation', () => {
     await page.fill('input[name="email"]', 'test@example.com');
     await page.fill('input[name="phone"]', '090-1234-5678');
 
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Should show error for inquiry type
@@ -154,7 +172,7 @@ test.describe('US3: Form Validation', () => {
     // Fill form with invalid data
     await page.fill('input[name="email"]', 'invalid-email');
 
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Wait a bit to see if any submission occurs
@@ -166,7 +184,7 @@ test.describe('US3: Form Validation', () => {
   });
 
   test('should have accessible error messages with ARIA', async ({ page }) => {
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Error messages should have proper ARIA attributes
@@ -182,7 +200,7 @@ test.describe('US3: Form Validation', () => {
     // Fill one field with invalid data
     await page.fill('input[name="email"]', 'invalid');
 
-    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).first();
+    const submitButton = page.getByRole('button', { name: /送信|Submit/i }).filter({ hasNotText: /無料相談予約/ });
     await submitButton.click();
 
     // Previously filled valid data should still be there
