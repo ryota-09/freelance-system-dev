@@ -725,7 +725,7 @@
 
 ### E2E Tests for User Story 6 (TDD Approach)
 
-- [ ] T072 [P] [US6] E2E test: Blog listing page shows posts
+- [X] T072 [P] [US6] E2E test: Blog listing page shows posts
   - Create: `tests/e2e/us6-blog-listing.spec.ts` using Playwright MCP
   - Test: Navigate to /blog
   - Test: See at least 3 blog post cards
@@ -734,7 +734,7 @@
   - Run: Using chrome-dev MCP - Expect: FAIL
   - Commit: "🧪 [US6] ブログ一覧E2Eテスト作成"
 
-- [ ] T073 [P] [US6] E2E test: Blog post displays content and CTA
+- [X] T073 [P] [US6] E2E test: Blog post displays content and CTA
   - Create: `tests/e2e/us6-blog-post.spec.ts` using Playwright MCP
   - Test: Navigate to specific blog post
   - Test: See post title, date, category, content
@@ -745,7 +745,7 @@
 
 ### Implementation for User Story 6
 
-- [ ] T074 [P] [US6] Create blog post MDX content files
+- [X] T074 [P] [US6] Create blog post MDX content files
   - Create: `content/blog/fukui-web-subsidy-guide.mdx` - 福井Web補助金ガイド
   - Create: `content/blog/local-seo-tips.mdx` - 地域SEOのコツ
   - Create: `content/blog/reservation-system-benefits.mdx` - 予約システムのメリット
@@ -754,7 +754,7 @@
   - Verify: MDX files parse correctly
   - Commit: "📝 [US6] ブログ記事MDXファイル作成"
 
-- [ ] T075 [P] [US6] Create BlogPostCard component
+- [X] T075 [P] [US6] Create BlogPostCard component
   - Create: `components/features/BlogPostCard.tsx`
   - Props: title, excerpt, date, category, slug
   - Display: Card with image (optional), metadata
@@ -762,7 +762,7 @@
   - Verify: Component renders
   - Commit: "🃏 [US6] ブログカードコンポーネント作成"
 
-- [ ] T076 [US6] Create blog listing page
+- [X] T076 [US6] Create blog listing page
   - Reference: Design files in `designs/` directory for blog layout
   - Create: `app/(marketing)/blog/page.tsx`
   - Load: All blog posts using getBlogPosts() from lib/mdx.ts
@@ -772,7 +772,7 @@
   - Verify: Blog listing page renders and matches design reference
   - Commit: "📋 [US6] ブログ一覧ページ実装完了"
 
-- [ ] T077 [US6] Create blog post detail page
+- [X] T077 [US6] Create blog post detail page
   - Reference: Design files in `designs/` directory for blog post layout
   - Create: `app/(marketing)/blog/[slug]/page.tsx`
   - Use: generateStaticParams() for all blog posts
@@ -783,7 +783,7 @@
   - Verify: Blog post pages render and match design reference
   - Commit: "📄 [US6] ブログ記事詳細ページ実装完了"
 
-- [ ] T078 [P] [US6] Add blog link to navigation and footer
+- [X] T078 [P] [US6] Add blog link to navigation and footer
   - Update: Navigation and Footer - Add "ブログ" link → /blog
   - Verify: Blog accessible from all pages
   - Commit: "🔗 [US6] ナビゲーションへブログリンク追加"
