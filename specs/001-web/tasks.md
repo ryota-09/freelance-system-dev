@@ -790,12 +790,12 @@
 
 ### Test Execution & Bug Fixing for User Story 6
 
-- [ ] T079 [US6] Run E2E tests using chrome-dev MCP
+- [X] T079 [US6] Run E2E tests using chrome-dev MCP
   - Run: T072 test - Blog listing
   - Run: T073 test - Blog post detail
   - Record: Test results
   - If FAIL: Fix and re-run
-  - Commit: "✅ [US6] E2Eテスト実行・修正完了"
+  - Commit: "✅ [US6] E2Eテスト実行・修正完了 - 全50テスト成功"
 
 **Checkpoint**: User Story 6 complete - Blog listing and posts functional
 
