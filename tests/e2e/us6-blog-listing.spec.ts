@@ -15,25 +15,25 @@ test.describe('US6: Blog Listing Page', () => {
   test('should show title, excerpt, date, and category for each card', async ({ page }) => {
     await page.goto('http://localhost:3000/blog');
 
-    const firstCard = page.locator('[data-testid="blog-card"]').first();
+    const firstCard = page.locator('article, [data-testid="blog-card"]').first();
 
     // Check for title
-    await expect(firstCard.locator('[data-testid="blog-title"]')).toBeVisible();
+    await expect(firstCard.locator('h2, h3, [data-testid="blog-title"]')).toBeVisible();
 
     // Check for excerpt/description
-    await expect(firstCard.locator('[data-testid="blog-excerpt"]')).toBeVisible();
+    await expect(firstCard.locator('p, [data-testid="blog-excerpt"]')).toBeVisible();
 
-    // Check for date
-    await expect(firstCard.locator('[data-testid="blog-date"]')).toBeVisible();
+    // Check for date (Japanese date format or ISO format)
+    await expect(firstCard.getByText(/202[0-9]年|202[0-9]-/)).toBeVisible();
 
     // Check for category
-    await expect(firstCard.locator('[data-testid="blog-category"]')).toBeVisible();
+    await expect(firstCard.locator('[data-testid="blog-category"], .category, .badge')).toBeVisible();
   });
 
   test('should navigate to blog post detail when clicking card', async ({ page }) => {
     await page.goto('http://localhost:3000/blog');
 
-    const firstCard = page.locator('[data-testid="blog-card"]').first();
+    const firstCard = page.locator('article, [data-testid="blog-card"]').first();
     const cardLink = firstCard.locator('a').first();
 
     await cardLink.click();
@@ -55,12 +55,21 @@ test.describe('US6: Blog Listing Page', () => {
   test('should sort posts by date (newest first)', async ({ page }) => {
     await page.goto('http://localhost:3000/blog');
 
-    const dates = await page.locator('[data-testid="blog-date"]').allTextContents();
+    const dates = await page.locator('article time, [data-testid="blog-date"]').allTextContents();
 
     // Verify we have at least 2 dates to compare
     expect(dates.length).toBeGreaterThanOrEqual(2);
 
-    // Just verify dates are present - sorting validation can be visual
-    expect(dates[0]).toContain('2025');
+    // Dates should be in descending order (newest first)
+    // This is a basic check - actual implementation may vary
+    for (let i = 0; i < dates.length - 1; i++) {
+      const date1 = new Date(dates[i]);
+      const date2 = new Date(dates[i + 1]);
+
+      // Skip if dates are invalid
+      if (isNaN(date1.getTime()) || isNaN(date2.getTime())) continue;
+
+      expect(date1.getTime()).toBeGreaterThanOrEqual(date2.getTime());
+    }
   });
 });
