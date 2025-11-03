@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { Calendar, Tag, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -180,7 +180,7 @@ export default async function BlogPostPage({
         data-testid="post-content"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg prose-amber max-w-none">
+          <div className="prose-blog max-w-none">
             {post.content}
           </div>
 

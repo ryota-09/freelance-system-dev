@@ -2,8 +2,9 @@
  * Process Page
  * Display the complete project flow from inquiry to maintenance
  */
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { MessageCircle, ClipboardList, PenTool, Settings, CheckCircle, Rocket, Wrench, Phone, Clock, Lock } from 'lucide-react';
+import { FAQAccordion } from '@/components/features/FAQAccordion';
 
 export const dynamic = 'force-static';
 
@@ -195,43 +196,22 @@ export default function ProcessPage() {
             よくあるご質問
           </h2>
 
-          <div className="space-y-4">
-            <details className="group rounded-lg border border-gray-200 p-6">
-              <summary className="flex cursor-pointer items-center justify-between font-semibold text-gray-900">
-                <span>途中で仕様変更は可能ですか？</span>
-                <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">
-                  ▼
-                </span>
-              </summary>
-              <p className="mt-4 text-gray-600">
-                はい、可能です。ただし、仕様変更は納期や費用に影響する場合がございますので、その都度ご相談させていただき、ご納得いただいた上で進行いたします。
-              </p>
-            </details>
-
-            <details className="group rounded-lg border border-gray-200 p-6">
-              <summary className="flex cursor-pointer items-center justify-between font-semibold text-gray-900">
-                <span>お見積もりは無料ですか？</span>
-                <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">
-                  ▼
-                </span>
-              </summary>
-              <p className="mt-4 text-gray-600">
-                はい、お見積もりは無料で承っております。まずはお客様のご要望をお聞かせください。最適なプランをご提案させていただきます。
-              </p>
-            </details>
-
-            <details className="group rounded-lg border border-gray-200 p-6">
-              <summary className="flex cursor-pointer items-center justify-between font-semibold text-gray-900">
-                <span>開発の知識がなくても大丈夫ですか？</span>
-                <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">
-                  ▼
-                </span>
-              </summary>
-              <p className="mt-4 text-gray-600">
-                もちろんです。専門的な知識がないお客様にも分かりやすくご説明し、二人三脚でプロジェクトを進めてまいりますので、ご安心ください。
-              </p>
-            </details>
-          </div>
+          <FAQAccordion
+            faqs={[
+              {
+                question: '途中で仕様変更は可能ですか?',
+                answer: 'はい、可能です。ただし、仕様変更は納期や費用に影響する場合がございますので、その都度ご相談させていただき、ご納得いただいた上で進行いたします。',
+              },
+              {
+                question: 'お見積もりは無料ですか?',
+                answer: 'はい、お見積もりは無料で承っております。まずはお客様のご要望をお聞かせください。最適なプランをご提案させていただきます。',
+              },
+              {
+                question: '開発の知識がなくても大丈夫ですか?',
+                answer: 'もちろんです。専門的な知識がないお客様にも分かりやすくご説明し、二人三脚でプロジェクトを進めてまいりますので、ご安心ください。',
+              },
+            ]}
+          />
         </div>
       </section>
 

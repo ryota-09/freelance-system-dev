@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { getFAQEntries } from '@/lib/mdx';
 import { FAQAccordion } from '@/components/features/FAQAccordion';
 import { Button } from '@/components/ui/button';

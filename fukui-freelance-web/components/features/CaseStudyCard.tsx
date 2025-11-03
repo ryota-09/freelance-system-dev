@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, TrendingUp } from 'lucide-react';
@@ -67,7 +67,7 @@ export function CaseStudyCard({
             data-testid="case-study-kpi"
             className="flex items-center gap-2 bg-primary/5 p-3 rounded-lg"
           >
-            <TrendingUp className="w-5 h-5 text-primary flex-shrink-0" />
+            <TrendingUp className="w-5 h-5 text-primary shrink-0" />
             <span className="font-semibold text-primary text-sm md:text-base">
               {resultsPreview}
             </span>

@@ -133,3 +133,193 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom MDX/Prose Styles for Blog Posts */
+@layer components {
+  .prose-blog {
+    @apply text-gray-800 leading-relaxed;
+  }
+
+  /* Headings */
+  .prose-blog h2 {
+    @apply text-3xl font-bold text-gray-900 mt-12 mb-6 pb-3 border-b-2 border-brand-500/20;
+  }
+
+  .prose-blog h3 {
+    @apply text-2xl font-bold text-gray-900 mt-10 mb-4;
+  }
+
+  .prose-blog h4 {
+    @apply text-xl font-semibold text-gray-800 mt-8 mb-3;
+  }
+
+  /* Paragraphs */
+  .prose-blog p {
+    @apply text-base leading-8 mb-6 text-gray-700;
+  }
+
+  /* Links */
+  .prose-blog a {
+    @apply text-brand-600 underline decoration-brand-300 hover:decoration-brand-600 transition-colors font-medium;
+  }
+
+  /* Lists */
+  .prose-blog ul {
+    @apply list-none space-y-3 my-6;
+  }
+
+  .prose-blog ul > li {
+    @apply relative pl-7 text-gray-700;
+  }
+
+  .prose-blog ul > li::before {
+    @apply content-['✓'] absolute left-0 text-brand-600 font-bold;
+  }
+
+  .prose-blog ol {
+    @apply list-decimal list-inside space-y-3 my-6 text-gray-700;
+  }
+
+  .prose-blog ol > li {
+    @apply pl-2;
+  }
+
+  /* Nested lists */
+  .prose-blog ul ul,
+  .prose-blog ol ul,
+  .prose-blog ul ol,
+  .prose-blog ol ol {
+    @apply mt-3 ml-6;
+  }
+
+  /* Blockquotes */
+  .prose-blog blockquote {
+    @apply border-l-4 border-brand-500 bg-brand-50 pl-6 pr-4 py-4 my-8 italic text-gray-700 rounded-r-lg;
+  }
+
+  .prose-blog blockquote p {
+    @apply mb-0;
+  }
+
+  /* Code blocks */
+  .prose-blog pre {
+    @apply bg-gray-900 text-gray-100 rounded-lg p-6 my-8 overflow-x-auto;
+  }
+
+  .prose-blog code {
+    @apply bg-gray-100 text-brand-700 px-2 py-1 rounded text-sm font-mono;
+  }
+
+  .prose-blog pre code {
+    @apply bg-transparent text-gray-100 p-0;
+  }
+
+  /* Tables */
+  .prose-blog table {
+    @apply w-full border-collapse my-8;
+  }
+
+  .prose-blog thead {
+    @apply bg-brand-50;
+  }
+
+  .prose-blog th {
+    @apply border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900;
+  }
+
+  .prose-blog td {
+    @apply border border-gray-300 px-4 py-3 text-gray-700;
+  }
+
+  .prose-blog tbody tr:hover {
+    @apply bg-gray-50;
+  }
+
+  /* Horizontal rule */
+  .prose-blog hr {
+    @apply border-t-2 border-gray-200 my-12;
+  }
+
+  /* Strong/Bold */
+  .prose-blog strong {
+    @apply font-bold text-gray-900;
+  }
+
+  /* Emphasis/Italic */
+  .prose-blog em {
+    @apply italic text-gray-800;
+  }
+
+  /* Images */
+  .prose-blog img {
+    @apply rounded-lg shadow-lg my-8 w-full;
+  }
+
+  /* Figure */
+  .prose-blog figure {
+    @apply my-8;
+  }
+
+  .prose-blog figcaption {
+    @apply text-sm text-gray-600 text-center mt-3 italic;
+  }
+
+  /* Special callout boxes */
+  .prose-blog .callout {
+    @apply border-l-4 border-blue-500 bg-blue-50 p-6 my-6 rounded-r-lg;
+  }
+
+  .prose-blog .callout-warning {
+    @apply border-l-4 border-yellow-500 bg-yellow-50 p-6 my-6 rounded-r-lg;
+  }
+
+  .prose-blog .callout-success {
+    @apply border-l-4 border-green-500 bg-green-50 p-6 my-6 rounded-r-lg;
+  }
+
+  .prose-blog .callout-danger {
+    @apply border-l-4 border-red-500 bg-red-50 p-6 my-6 rounded-r-lg;
+  }
+
+  /* Custom box styles for examples */
+  .prose-blog .example-box {
+    @apply bg-gradient-to-r from-brand-50 to-amber-50 border-2 border-brand-200 rounded-lg p-6 my-6;
+  }
+
+  .prose-blog .example-box h4 {
+    @apply text-brand-700 font-bold mb-3 mt-0;
+  }
+
+  /* Highlight mark */
+  .prose-blog mark {
+    @apply bg-yellow-200 px-1 rounded;
+  }
+
+  /* Definition lists */
+  .prose-blog dl {
+    @apply my-6;
+  }
+
+  .prose-blog dt {
+    @apply font-bold text-gray-900 mt-4;
+  }
+
+  .prose-blog dd {
+    @apply ml-6 text-gray-700 mb-2;
+  }
+
+  /* Responsive typography */
+  @media (max-width: 640px) {
+    .prose-blog h2 {
+      @apply text-2xl mt-8 mb-4;
+    }
+
+    .prose-blog h3 {
+      @apply text-xl mt-6 mb-3;
+    }
+
+    .prose-blog p {
+      @apply text-sm leading-7 mb-4;
+    }
+  }
+}
